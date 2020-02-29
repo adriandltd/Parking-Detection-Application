@@ -7,7 +7,8 @@ import 'package:flutter/widgets.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'dart:io';
 
-import 'package:parking_detection_application/home.dart';
+import 'home.dart';
+
 
 class MySignUpPage extends StatefulWidget {
   MySignUpPage();

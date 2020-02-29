@@ -4,12 +4,13 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
-import 'package:parking_detection_application/home.dart';
-import 'package:parking_detection_application/login.dart';
-import 'package:parking_detection_application/signup.dart';
-import 'package:parking_detection_application/welcomepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io' show Platform;
+
+import 'home.dart';
+import 'login.dart';
+import 'signup.dart';
+import 'welcomepage.dart';
 String idToken;
 Future<void> main() async {
   timeDilation = 1.5;
@@ -86,7 +87,7 @@ class MyStartUpApp2 extends StatelessWidget {
   Widget build(BuildContext context) {
     setPortraitOrientation();
     return MaterialApp(
-      title: 'Komi Social',
+      title: 'Find Me Parking',
       theme: ThemeData(
         textSelectionHandleColor: Colors.grey[400],
         cursorColor: Colors.white54,

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>44128936451-ijtv3pq70l5oumj6jhgj5gtp6utdpo8n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.44128936451-ijtv3pq70l5oumj6jhgj5gtp6utdpo8n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBgJhVUtL43PqhIvuM7DgmdwvMpok3K1Lg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>44128936451</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.parkingDetectionApplication</string>
+	<key>PROJECT_ID</key>
+	<string>park-me-f4f0c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>park-me-f4f0c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:44128936451:ios:b866fcb1ebb295e2b8e436</string>
+	<key>DATABASE_URL</key>
+	<string>https://park-me-f4f0c.firebaseio.com</string>
+</dict>
+</plist>

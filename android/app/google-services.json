@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "44128936451",
+    "firebase_url": "https://park-me-f4f0c.firebaseio.com",
+    "project_id": "park-me-f4f0c",
+    "storage_bucket": "park-me-f4f0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44128936451:android:c21cf554a021686bb8e436",
+        "android_client_info": {
+          "package_name": "com.example.parkingDetectionApplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44128936451-nbqa56ddpl5oq1om09q2g9jhpg580rih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb52Re8uXz8I86bwAPMlAqydA4tU9arPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44128936451-nbqa56ddpl5oq1om09q2g9jhpg580rih.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "44128936451-je07v8lg9l8j0n74ilvgle95p9qle409.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.parkingDetectionApplication"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
