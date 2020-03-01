@@ -34,7 +34,7 @@
 lib/generated_plugin_registrant.dart
 
 # Android related
-**/android/
+**/android/**
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
