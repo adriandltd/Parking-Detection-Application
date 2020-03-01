@@ -8,7 +8,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Komi Social"
+        android:label="Find Me Parking"
         android:icon="@drawable/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round">
         <activity
