@@ -173,7 +173,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+      backgroundColor: Color.fromRGBO(255, 112, 0, 1),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Container(
@@ -183,13 +183,13 @@ class _MyWelcomePage extends State<MyWelcomePage>
               end: Alignment.bottomCenter,
               stops: [.125, .25, .45, .5, .75, .875, 1],
               colors: [
-                Color.fromRGBO(66, 134, 244, 1),
-                Color.fromRGBO(74, 146, 244, 1),
-                Color.fromRGBO(78, 158, 244, 1),
-                Color.fromRGBO(86, 166, 244, 1),
-                Color.fromRGBO(78, 158, 244, 1),
-                Color.fromRGBO(74, 146, 244, 1),
-                Color.fromRGBO(66, 134, 244, 1),
+                Color.fromRGBO(255, 112, 0, 1),
+                Color.fromRGBO(255, 130, 0, 1),
+                Color.fromRGBO(255, 158, 0, 1),
+                Color.fromRGBO(255, 166, 0, 1),
+                Color.fromRGBO(255, 158, 0, 1),
+                Color.fromRGBO(255, 130, 0, 1),
+                Color.fromRGBO(255, 112, 0, 1),
               ],
             ),
           ),
@@ -482,9 +482,9 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightElevation: 3,
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,
-                      splashColor: Colors.blueAccent,
-                      highlightColor: Colors.blue,
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
                         "\n\n\n\n\n\nPerform Actions & engagement to\noutreach potential followers.\nLike, comment, follow, unfollow\n\n\n\n\n\n",
                         textAlign: TextAlign.center,
@@ -514,9 +514,9 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightElevation: 3,
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,
-                      splashColor: Colors.blueAccent,
-                      highlightColor: Colors.blue,
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
                         "\n\n\n\n\n\nTarget hashtags in your\n niche, usernames who follow your\ncompetitors & locations\nthat match your target audience\n\n\n\n\n\n",
                         textAlign: TextAlign.center,
@@ -546,9 +546,9 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightElevation: 3,
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,
-                      splashColor: Colors.blueAccent,
-                      highlightColor: Colors.blue,
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
                         "\n\n\n\n\n\nWe keep your home feed clean\nso that you only see content\nfrom users you follown\n\n\n\n\n",
                         textAlign: TextAlign.center,
@@ -578,9 +578,9 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightElevation: 3,
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,
-                      splashColor: Colors.blueAccent,
-                      highlightColor: Colors.blue,
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
                         "\n\n\n\n\n\nSchedule & post your content\non your behalf\n\n\n\n\n",
                         textAlign: TextAlign.center,
@@ -615,9 +615,9 @@ class _MyWelcomePage extends State<MyWelcomePage>
                           deviceSize.height * 0.023),
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,
-                      splashColor: Colors.blueAccent,
-                      highlightColor: Colors.blue,
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
                         "Tap to Start",
                         style: TextStyle(

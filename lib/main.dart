@@ -30,16 +30,16 @@ Future<void> main() async {
 
 class MyStartUpApp extends StatelessWidget {
   static Map<int, Color> color = {
-    50: Color.fromRGBO(66, 134, 244, .1),
-    100: Color.fromRGBO(66, 134, 244, .2),
-    200: Color.fromRGBO(66, 134, 244, .3),
-    300: Color.fromRGBO(66, 134, 244, .4),
-    400: Color.fromRGBO(66, 134, 244, .5),
-    500: Color.fromRGBO(66, 134, 244, .6),
-    600: Color.fromRGBO(66, 134, 244, .7),
-    700: Color.fromRGBO(66, 134, 244, .8),
-    800: Color.fromRGBO(66, 134, 244, .9),
-    900: Color.fromRGBO(66, 134, 244, 1),
+    50: Color.fromRGBO(255, 112, 0, .1),
+    100: Color.fromRGBO(255, 112, 0, .2),
+    200: Color.fromRGBO(255, 112, 0, .3),
+    300: Color.fromRGBO(255, 112, 0, .4),
+    400: Color.fromRGBO(255, 112, 0, .5),
+    500: Color.fromRGBO(255, 112, 0, .6),
+    600: Color.fromRGBO(255, 112, 0, .7),
+    700: Color.fromRGBO(255, 112, 0, .8),
+    800: Color.fromRGBO(255, 112, 0, .9),
+    900: Color.fromRGBO(255, 112, 0, 1),
   };
 
   final MaterialColor colorCustom = MaterialColor(0xFF4286f4, color);
@@ -51,7 +51,7 @@ class MyStartUpApp extends StatelessWidget {
   Widget build(BuildContext context) {
     setPortraitOrientation();
     return MaterialApp(
-      title: 'Komi Social',
+      title: 'Find Me Parking',
       theme: ThemeData(
         textSelectionHandleColor: Colors.grey[400],
         cursorColor: Colors.white54,
@@ -66,16 +66,16 @@ class MyStartUpApp extends StatelessWidget {
 }
 class MyStartUpApp2 extends StatelessWidget {
   static Map<int, Color> color = {
-    50: Color.fromRGBO(66, 134, 244, .1),
-    100: Color.fromRGBO(66, 134, 244, .2),
-    200: Color.fromRGBO(66, 134, 244, .3),
-    300: Color.fromRGBO(66, 134, 244, .4),
-    400: Color.fromRGBO(66, 134, 244, .5),
-    500: Color.fromRGBO(66, 134, 244, .6),
-    600: Color.fromRGBO(66, 134, 244, .7),
-    700: Color.fromRGBO(66, 134, 244, .8),
-    800: Color.fromRGBO(66, 134, 244, .9),
-    900: Color.fromRGBO(66, 134, 244, 1),
+    50: Color.fromRGBO(255, 112, 0, .1),
+    100: Color.fromRGBO(255, 112, 0, .2),
+    200: Color.fromRGBO(255, 112, 0, .3),
+    300: Color.fromRGBO(255, 112, 0, .4),
+    400: Color.fromRGBO(255, 112, 0, .5),
+    500: Color.fromRGBO(255, 112, 0, .6),
+    600: Color.fromRGBO(255, 112, 0, .7),
+    700: Color.fromRGBO(255, 112, 0, .8),
+    800: Color.fromRGBO(255, 112, 0, .9),
+    900: Color.fromRGBO(255, 112, 0, 1),
   };
 
   final MaterialColor colorCustom = MaterialColor(0xFF4286f4, color);
@@ -153,7 +153,7 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
     var deviceSize = MediaQuery.of(context).size;
     return WillPopScope(
           child: Scaffold(
-          backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+          backgroundColor: Color.fromRGBO(255, 112, 0, 1),
           body: AnnotatedRegion<SystemUiOverlayStyle>(
             value: iOSAndroid(),
             sized: false,
@@ -164,12 +164,10 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                   center: Alignment.center,
                   stops: [.25, .45, .85, 1],
                   colors: [
-                    // Color.fromRGBO(255, 212, 109, 1),
-                    // Color.fromRGBO(255, 200, 70, 1),
-                    Color.fromRGBO(84, 164, 244, 1),
-                    Color.fromRGBO(78, 158, 244, 1),
-                    Color.fromRGBO(68, 140, 244, 1),
-                    Color.fromRGBO(66, 134, 244, 1),
+                    Color.fromRGBO(255, 160, 0, 1),
+                    Color.fromRGBO(255, 140, 0, 1),
+                    Color.fromRGBO(255, 120, 0, 1),
+                    Color.fromRGBO(255, 112, 0, 1),
                   ],
                 ),
               ),
@@ -209,9 +207,9 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                                   deviceSize.height * 0.05),
                               disabledBorderColor: Colors.white,
                               highlightedBorderColor: Colors.white,
-                              splashColor: Colors.blue[400],
-                              highlightColor: Colors.blue,
-                              color: Color.fromRGBO(66, 134, 244, 1),
+                              splashColor: Colors.green[400],
+                              highlightColor: Colors.green,
+                              color: Colors.green,
                               child: Text(
                                 "Log In",
                                 style: TextStyle(
@@ -250,9 +248,9 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                                   deviceSize.height * 0.05),
                               disabledBorderColor: Colors.white,
                               highlightedBorderColor: Colors.white,
-                              splashColor: Colors.blue[400],
-                              highlightColor: Colors.blue,
-                              color: Color.fromRGBO(66, 134, 244, 1),
+                              splashColor: Colors.green[400],
+                              highlightColor: Colors.green,
+                              color: Colors.green,
                               child: Text(
                                 "Sign Up",
                                 style: TextStyle(
@@ -290,7 +288,7 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                             );
                           },
                           child: Text(
-                            "New to Komi?",
+                            "More Info?",
                             style: TextStyle(
                                 letterSpacing: 1.1,
                                 color: Colors.white70,

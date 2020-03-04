@@ -57,13 +57,13 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
             radius: .62,
             center: Alignment.center,
             stops: [.25, .45, .85, 1],
-            colors: [
-              // Color.fromRGBO(255, 212, 109, 1),
-              // Color.fromRGBO(255, 200, 70, 1),
-              Color.fromRGBO(82, 162, 244, 1),
-              Color.fromRGBO(78, 158, 244, 1),
-              Color.fromRGBO(68, 140, 244, 1),
-              Color.fromRGBO(66, 134, 244, 1),
+          colors: [
+            // Color.fromRGBO(255, 212, 109, 1),
+            // Color.fromRGBO(255, 200, 70, 1),
+            Color.fromRGBO(255, 160, 0, 1),
+            Color.fromRGBO(255, 140, 0, 1),
+            Color.fromRGBO(255, 120, 0, 1),
+            Color.fromRGBO(255, 112, 0, 1),
             ],
           ),
         ),
@@ -190,7 +190,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                     highlightedBorderColor: Colors.white,
                     splashColor: Colors.blueAccent,
                     highlightColor: Colors.blue,
-                    color: Color.fromRGBO(66, 134, 244, 1),
+                    color: Color.fromRGBO(255, 112, 0, 1),
                     child: Text(
                       "Reset",
                       style: TextStyle(
@@ -250,7 +250,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20.0))),
-                                      color: Color.fromRGBO(66, 134, 244, 1),
+                                      color: Color.fromRGBO(255, 112, 0, 1),
                                       child: Text('Ok',
                                           style: TextStyle(
                                               letterSpacing: 1.1,
@@ -292,7 +292,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20.0))),
-                                      color: Color.fromRGBO(66, 134, 244, 1),
+                                      color: Color.fromRGBO(255, 112, 0, 1),
                                       child: Text('Ok',
                                           style: TextStyle(
                                               letterSpacing: 1.1,
@@ -333,7 +333,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20.0))),
-                                      color: Color.fromRGBO(66, 134, 244, 1),
+                                      color: Color.fromRGBO(255, 112, 0, 1),
                                       child: Text('Ok',
                                           style: TextStyle(
                                               letterSpacing: 1.1,
@@ -384,7 +384,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+      backgroundColor: Color.fromRGBO(255, 112, 0, 1),
       body: ModalProgressHUD(
         child: fpwidget(),
         inAsyncCall: _loading,

@@ -252,15 +252,16 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
     return Container(
       decoration: BoxDecoration(
         gradient: RadialGradient(
-          radius: .9,
+          radius: .75,
           center: Alignment.center,
-          stops: [.33, .66, .99],
+          stops: [.25, .45, .85, 1],
           colors: [
             // Color.fromRGBO(255, 212, 109, 1),
             // Color.fromRGBO(255, 200, 70, 1),
-            Color.fromRGBO(80, 160, 244, 1),
-            Color.fromRGBO(68, 140, 244, 1),
-            Color.fromRGBO(66, 134, 244, 1),
+            Color.fromRGBO(255, 160, 0, 1),
+            Color.fromRGBO(255, 140, 0, 1),
+            Color.fromRGBO(255, 120, 0, 1),
+            Color.fromRGBO(255, 112, 0, 1),
           ],
         ),
       ),
@@ -310,11 +311,11 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
                   )),
                   ScaleTransition(
                     child: Text(
-                      "Welcome!",
+                      "Welcome Back!",
                       style: TextStyle(
                           letterSpacing: 2.8,
                           color: Colors.white,
-                          fontSize: deviceSize.width * 0.095,
+                          fontSize: deviceSize.width * 0.08,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'AvenirNext'),
                       textAlign: TextAlign.center,
@@ -433,9 +434,9 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
                           deviceSize.height * 0.023),
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,
-                      splashColor: Colors.blueAccent,
-                      highlightColor: Colors.blue,
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
                         "Login",
                         style: TextStyle(
@@ -518,13 +519,13 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+      backgroundColor: Color.fromRGBO(255, 112, 0, 1),
       body: ModalProgressHUD(
         child: loginwidget(),
         inAsyncCall: _loading,
         progressIndicator: CircularProgressIndicator(
           strokeWidth: 4,
-          backgroundColor: Colors.white54,
+          backgroundColor: Colors.green,
         ),
         dismissible: false,
         opacity: 0.25,

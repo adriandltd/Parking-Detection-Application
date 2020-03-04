@@ -70,13 +70,12 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
         gradient: RadialGradient(
           radius: 1.45,
           center: Alignment.center,
-          stops: [.33, .66, .99],
+          stops: [.25, .45, .85, 1],
           colors: [
-            // Color.fromRGBO(255, 212, 109, 1),
-            // Color.fromRGBO(255, 200, 70, 1),
-            Color.fromRGBO(80, 160, 244, 1),
-            Color.fromRGBO(68, 140, 244, 1),
-            Color.fromRGBO(66, 134, 244, 1),
+            Color.fromRGBO(255, 160, 0, 1),
+            Color.fromRGBO(255, 140, 0, 1),
+            Color.fromRGBO(255, 120, 0, 1),
+            Color.fromRGBO(255, 112, 0, 1),
           ],
         ),
       ),
@@ -654,7 +653,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                   FlatButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                    color: Color.fromRGBO(66, 134, 244, 1),
+                    color: Color.fromRGBO(255, 112, 0, 1),
                     child: Text('Ok',
                         style: TextStyle(
                             letterSpacing: 1.1,
@@ -717,7 +716,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20.0))),
-                        color: Color.fromRGBO(66, 134, 244, 1),
+                        color: Color.fromRGBO(255, 112, 0, 1),
                         child: Text('Ok',
                             style: TextStyle(
                                 letterSpacing: 1.1,
@@ -772,7 +771,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20.0))),
-                        color: Color.fromRGBO(66, 134, 244, 1),
+                        color: Color.fromRGBO(255, 112, 0, 1),
                         child: Text('Ok',
                             style: TextStyle(
                                 letterSpacing: 1.1, color: Colors.white)),
@@ -819,7 +818,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(20.0))),
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      color: Color.fromRGBO(255, 112, 0, 1),
                       child: Text('Ok',
                           style: TextStyle(
                               letterSpacing: 1.1,
@@ -863,7 +862,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20.0))),
-                        color: Color.fromRGBO(66, 134, 244, 1),
+                        color: Color.fromRGBO(255, 112, 0, 1),
                         child: Text('Ok',
                             style: TextStyle(
                                 letterSpacing: 1.1,
@@ -907,7 +906,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 FlatButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                  color: Color.fromRGBO(66, 134, 244, 1),
+                  color: Color.fromRGBO(255, 112, 0, 1),
                   child: Text('Ok',
                       style: TextStyle(
                           letterSpacing: 1.1,
@@ -951,7 +950,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 FlatButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                  color: Color.fromRGBO(66, 134, 244, 1),
+                  color: Color.fromRGBO(255, 112, 0, 1),
                   child: Text('Ok',
                       style: TextStyle(
                           letterSpacing: 1.1,
@@ -995,7 +994,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 FlatButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                  color: Color.fromRGBO(66, 134, 244, 1),
+                  color: Color.fromRGBO(255, 112, 0, 1),
                   child: Text('Ok',
                       style: TextStyle(
                           letterSpacing: 1.1,
@@ -1091,13 +1090,13 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+      backgroundColor: Color.fromRGBO(255, 112, 0, 1),
       body: ModalProgressHUD(
         child: signupwidget(),
         inAsyncCall: _loading,
         progressIndicator: CircularProgressIndicator(
           strokeWidth: 4,
-          backgroundColor: Colors.white54,
+          backgroundColor: Colors.green,
         ),
         dismissible: false,
         opacity: 0.25,
