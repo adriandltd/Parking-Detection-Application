@@ -188,9 +188,9 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                         deviceSize.height * 0.023),
                     disabledBorderColor: Colors.white,
                     highlightedBorderColor: Colors.white,
-                    splashColor: Colors.blueAccent,
-                    highlightColor: Colors.blue,
-                    color: Color.fromRGBO(255, 112, 0, 1),
+                    splashColor: Colors.green,
+                    highlightColor: Colors.green,
+                    color: Colors.green,
                     child: Text(
                       "Reset",
                       style: TextStyle(
