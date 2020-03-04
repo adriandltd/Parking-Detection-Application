@@ -72,3 +72,31 @@ lib/generated_plugin_registrant.dart
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
 # End of https://www.gitignore.io/api/flutter
+*.bin
+*.bin
+*.bin
+*.lock
+*.lock
+android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin
+*.bin
+*.lock
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+android/local.properties
+android/.gradle/4.10.2/fileHashes/fileHashes.bin
+android/.gradle/4.10.2/fileHashes/fileHashes.lock
+android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin
+android/.gradle/4.10.2/javaCompile/jarAnalysis.bin
+android/.gradle/4.10.2/javaCompile/javaCompile.lock
+android/.gradle/4.10.2/javaCompile/taskHistory.bin
+android/.gradle/4.10.2/taskHistory/taskHistory.bin
+android/.gradle/4.10.2/taskHistory/taskHistory.lock
+android/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+android/.gradle/buildOutputCleanup/outputFiles.bin
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+android/local.properties
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+ios/Pods/Manifest.lock
+ios/Runner/GeneratedPluginRegistrant.h
+ios/Runner/GeneratedPluginRegistrant.m
+pubspec.lock
