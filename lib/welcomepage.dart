@@ -460,18 +460,6 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       padding: EdgeInsets.only(top: deviceSize.height * 0.05)),
                   ScaleTransition(
                     scale: Tween(begin: .1, end: 1.0).animate(CurvedAnimation(
-                        curve: Curves.decelerate, parent: _scalecontroller8)),
-                    child: Row(
-                      children: <Widget>[
-                        Image.asset('assets/manager-avatar.png',
-                            scale: 4.5, alignment: Alignment.center),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(top: deviceSize.height * 0.045)),
-                  ScaleTransition(
-                    scale: Tween(begin: .1, end: 1.0).animate(CurvedAnimation(
                         curve: Curves.decelerate, parent: _scalecontroller9)),
                     child: OutlineButton(
                       borderSide: BorderSide(

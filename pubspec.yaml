@@ -53,10 +53,7 @@ flutter:
   assets:
   - assets/komi social white.png
   - assets/komi logo april 2019.png
-  - assets/manager-avatar.png
   - assets/arrow_right.png
-  - assets/instalogo.png
-  - assets/secure-stripe-payment-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
