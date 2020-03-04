@@ -256,8 +256,6 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
           center: Alignment.center,
           stops: [.25, .45, .85, 1],
           colors: [
-            // Color.fromRGBO(255, 212, 109, 1),
-            // Color.fromRGBO(255, 200, 70, 1),
             Color.fromRGBO(255, 160, 0, 1),
             Color.fromRGBO(255, 140, 0, 1),
             Color.fromRGBO(255, 120, 0, 1),

@@ -776,41 +776,6 @@ class _WeeklyPage extends State<WeeklyPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // String monthfunction(val) {
-    //   switch (val) {
-    //     case 1:
-    //       return 'JAN';
-    //     case 2:
-    //       return 'FEB';
-    //     case 3:
-    //       return 'MAR';
-    //     case 4:
-    //       return 'APR';
-    //     case 5:
-    //       return 'MAY';
-    //     case 6:
-    //       return 'JUN';
-    //     case 7:
-    //       return 'JUL';
-    //     case 8:
-    //       return 'AUG';
-    //     case 9:
-    //       return 'SEP';
-    //     case 10:
-    //       return 'OCT';
-    //     case 11:
-    //       return 'NOV';
-    //     case 12:
-    //       return 'DEC';
-    //     default:
-    //       return '';
-    //   }
-    // }
-
-    // List<Color> gradientColors = [
-    //   Color(0xff23b6e6),
-    //   Colors.white,
-    // ];
     var deviceSize = MediaQuery.of(context).size;
     return Container(
         decoration: BoxDecoration(
@@ -2126,8 +2091,6 @@ class _ManagerPage extends State<ManagerPage> with TickerProviderStateMixin {
             center: Alignment.bottomCenter,
             stops: [.25, .45, .85, 1],
             colors: [
-              // Color.fromRGBO(255, 212, 109, 1),
-              // Color.fromRGBO(255, 200, 70, 1),
               Color.fromRGBO(84, 164, 244, 1),
               Color.fromRGBO(78, 158, 244, 1),
               Color.fromRGBO(68, 140, 244, 1),
