@@ -55,11 +55,6 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
   AnimationController _emailscalecontroller;
   AnimationController _pass1scalecontroller;
   AnimationController _pass2scalecontroller;
-  AnimationController _bemailscalecontroller;
-  AnimationController _webscalecontroller;
-  AnimationController _cityscalecontroller;
-  AnimationController _statescalecontroller;
-  AnimationController _zipscalecontroller;
   AnimationController _continuescalecontroller;
 
   signupwidget() {
@@ -257,7 +252,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 color: Colors.white,
                                 width: 2,
                                 style: BorderStyle.solid)),
-                        hintText: 'Personal Email',
+                        hintText: 'Email',
                         hintStyle: TextStyle(
                             color: Colors.white54,
                             fontSize: deviceSize.height * 0.025,
@@ -847,28 +842,8 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
         AnimationController(vsync: this, duration: Duration(milliseconds: 550));
     _pass2scalecontroller.forward();
 
-    _bemailscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
-    _bemailscalecontroller.forward();
-
-    _webscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
-    _webscalecontroller.forward();
-
-    _cityscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 800));
-    _cityscalecontroller.forward();
-
-    _statescalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
-    _statescalecontroller.forward();
-
-    _zipscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
-    _zipscalecontroller.forward();
-
     _continuescalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1100));
+        vsync: this, duration: Duration(milliseconds: 700));
     _continuescalecontroller.forward();
   }
 

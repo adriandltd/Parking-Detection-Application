@@ -103,7 +103,7 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(20.0))),
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      color: Color.fromRGBO(255, 112, 0, 1),
                       child: Text('Ok',
                           style: TextStyle(
                               letterSpacing: 1.1,
@@ -179,7 +179,7 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(20.0))),
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      color: Color.fromRGBO(255, 112, 0, 1),
                       child: Text('Ok',
                           style: TextStyle(
                               letterSpacing: 1.1,
@@ -225,7 +225,7 @@ class _MyLoginPage extends State<MyLoginPage> with TickerProviderStateMixin {
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(20.0))),
-                      color: Color.fromRGBO(66, 134, 244, 1),
+                      color: Color.fromRGBO(255, 112, 0, 1),
                       child: Text('Ok',
                           style: TextStyle(
                               letterSpacing: 1.1,
