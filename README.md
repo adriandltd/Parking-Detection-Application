@@ -1,6 +1,4 @@
-# komi_social
-
-A new Flutter project.
+# Find Me Parking Application
 
 ## Getting Started
 

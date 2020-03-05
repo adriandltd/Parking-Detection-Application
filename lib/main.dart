@@ -11,6 +11,7 @@ import 'home.dart';
 import 'login.dart';
 import 'signup.dart';
 import 'welcomepage.dart';
+
 String idToken;
 Future<void> main() async {
   timeDilation = 1.5;
@@ -20,11 +21,12 @@ Future<void> main() async {
   checkifLoggedIn() {
     if (idToken == null)
       return MyStartUpApp();
-    else if (idToken == 'none') 
+    else if (idToken == 'none')
       return MyStartUpApp();
     else
       return MyStartUpApp2();
   }
+
   runApp(checkifLoggedIn());
 }
 
@@ -58,12 +60,13 @@ class MyStartUpApp extends StatelessWidget {
         primarySwatch: colorCustom,
       ),
       home: MyStartUpPage(),
-      routes: <String, WidgetBuilder> {
-      '/start': (BuildContext context) => MyStartUpPage(),
-    },
+      routes: <String, WidgetBuilder>{
+        '/start': (BuildContext context) => MyStartUpPage(),
+      },
     );
   }
 }
+
 class MyStartUpApp2 extends StatelessWidget {
   static Map<int, Color> color = {
     50: Color.fromRGBO(255, 112, 0, .1),
@@ -94,9 +97,9 @@ class MyStartUpApp2 extends StatelessWidget {
         primarySwatch: colorCustom,
       ),
       home: MyHomePage(),
-      routes: <String, WidgetBuilder> {
-      '/start': (BuildContext context) => MyStartUpPage(),
-    },
+      routes: <String, WidgetBuilder>{
+        '/start': (BuildContext context) => MyStartUpPage(),
+      },
     );
   }
 }
@@ -111,20 +114,37 @@ class MyStartUpPage extends StatefulWidget {
 }
 
 class _MyStartUpPageState extends State<MyStartUpPage> {
-  determineScaleFactor() {
+  determineScaleFactorFindMeParking() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 7.5;
+      return 6.25;
     else if (deviceSize.height > 800)
-      return 6.5;
+      return 5.25;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 7.0;
+      return 5.75;
     else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 8.0;
+      return 6.85;
     else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 8.5;
+      return 7.25;
     else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 9.0;
+      return 7.75;
+    else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
+  }
+
+  determineScaleFactorUTRGV() {
+    var deviceSize = MediaQuery.of(context).size;
+    if (deviceSize.height > 900)
+      return 14.5;
+    else if (deviceSize.height > 800)
+      return 14.5;
+    else if (deviceSize.height > 700 && deviceSize.height < 800)
+      return 13.0;
+    else if (deviceSize.height > 600 && deviceSize.height < 700)
+      return 14.0;
+    else if (deviceSize.height > 500 && deviceSize.height < 600)
+      return 14.5;
+    else if (deviceSize.height > 400 && deviceSize.height < 500)
+      return 15.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
@@ -152,7 +172,7 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return WillPopScope(
-          child: Scaffold(
+      child: Scaffold(
           backgroundColor: Color.fromRGBO(255, 112, 0, 1),
           body: AnnotatedRegion<SystemUiOverlayStyle>(
             value: iOSAndroid(),
@@ -160,150 +180,156 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
             child: Container(
               decoration: BoxDecoration(
                 gradient: RadialGradient(
-                  radius: .9,
+                  radius: 1.55,
                   center: Alignment.center,
-                  stops: [.25, .45, .85, 1],
+                  stops: [.25, .5, 1],
                   colors: [
-                    Color.fromRGBO(255, 160, 0, 1),
-                    Color.fromRGBO(255, 140, 0, 1),
-                    Color.fromRGBO(255, 120, 0, 1),
+                    Color.fromRGBO(255, 170, 0, 1),
+                    Color.fromRGBO(255, 135, 0, 1),
                     Color.fromRGBO(255, 112, 0, 1),
                   ],
                 ),
               ),
               height: deviceSize.height,
               width: deviceSize.width,
-              child: Center(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                            padding:
-                                EdgeInsets.only(top: deviceSize.height * .2)),
-                        Image.asset('assets/komi social white.png',
-                            scale: determineScaleFactor(),
-                            alignment: Alignment.topCenter),
-                        Padding(
-                            padding:
-                                EdgeInsets.only(top: deviceSize.height / 7.73)),
-                        Row(
-                          children: <Widget>[
-                            OutlineButton(
-                              borderSide: BorderSide(
-                                color: Colors.white, //Color of the border
-                                style: BorderStyle.solid, //Style of the border
-                                width:
-                                    deviceSize.width / 125, //width of the border
-                              ),
-                              highlightElevation: 6,
-                              padding: EdgeInsets.fromLTRB(
-                                  deviceSize.height * 0.04,
-                                  deviceSize.height * 0.05,
-                                  deviceSize.height * 0.04,
-                                  deviceSize.height * 0.05),
-                              disabledBorderColor: Colors.white,
-                              highlightedBorderColor: Colors.white,
-                              splashColor: Colors.green[400],
-                              highlightColor: Colors.green,
-                              color: Colors.green,
-                              child: Text(
-                                "Log In",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: deviceSize.height / 33.83,
-                                    fontWeight: FontWeight.w300,
-                                    fontFamily: 'AvenirNext'),
-                              ),
-                              onPressed: () {
-                                HapticFeedback.vibrate();
-                                Navigator.of(context, rootNavigator: true).push(
-                                  CupertinoPageRoute<bool>(
-                                    builder: (BuildContext context) =>
-                                        MyLoginPage(),
-                                  ),
-                                );
-                              },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25)),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                          padding:
+                              EdgeInsets.only(top: deviceSize.height * .17)),
+                      Image.asset('assets/findmeparkinglogo.png',
+                          scale: determineScaleFactorFindMeParking(),
+                          alignment: Alignment.topCenter),
+                      Padding(
+                          padding: EdgeInsets.only(
+                        top: deviceSize.height * 0.02,
+                      )),
+                      Image.asset(
+                        'assets/utrgv-logo.png',
+                        scale: determineScaleFactorUTRGV(),
+                        alignment: Alignment.centerRight,
+                      ),
+                      Padding(
+                          padding:
+                              EdgeInsets.only(top: deviceSize.height * 0.13)),
+                      Row(
+                        children: <Widget>[
+                          OutlineButton(
+                            borderSide: BorderSide(
+                              color: Colors.white, //Color of the border
+                              style: BorderStyle.solid, //Style of the border
+                              width:
+                                  deviceSize.width / 125, //width of the border
                             ),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: deviceSize.width / 9.375)),
-                            OutlineButton(
-                              borderSide: BorderSide(
-                                color: Colors.white, //Color of the border
-                                style: BorderStyle.solid, //Style of the border
-                                width:
-                                    deviceSize.width / 125, //width of the border
-                              ),
-                              highlightElevation: 6,
-                              padding: EdgeInsets.fromLTRB(
-                                  deviceSize.height * 0.028,
-                                  deviceSize.height * 0.05,
-                                  deviceSize.height * 0.028,
-                                  deviceSize.height * 0.05),
-                              disabledBorderColor: Colors.white,
-                              highlightedBorderColor: Colors.white,
-                              splashColor: Colors.green[400],
-                              highlightColor: Colors.green,
-                              color: Colors.green,
-                              child: Text(
-                                "Sign Up",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: deviceSize.height / 33.83,
-                                    fontWeight: FontWeight.w300,
-                                    fontFamily: 'AvenirNext'),
-                              ),
-                              onPressed: () {
-                                HapticFeedback.vibrate();
-                                Navigator.of(context, rootNavigator: false).push(
-                                  CupertinoPageRoute<bool>(
-                                    builder: (BuildContext context) =>
-                                        MySignUpPage(),
-                                  ),
-                                );
-                              },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25)),
+                            highlightElevation: 6,
+                            padding: EdgeInsets.fromLTRB(
+                                deviceSize.height * 0.04,
+                                deviceSize.height * 0.05,
+                                deviceSize.height * 0.04,
+                                deviceSize.height * 0.05),
+                            disabledBorderColor: Colors.white,
+                            highlightedBorderColor: Colors.white,
+                            splashColor: Colors.green[400],
+                            highlightColor: Colors.green,
+                            color: Colors.green,
+                            child: Text(
+                              "Log In",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: deviceSize.height / 33.83,
+                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'AvenirNext'),
                             ),
-                          ],
-                        ),
-                        Padding(
-                            padding:
-                                EdgeInsets.only(top: deviceSize.height * 0.19)),
-                        GestureDetector(
-                          onTap: () {
-                            HapticFeedback.vibrate();
-                            Navigator.of(context, rootNavigator: true).push(
-                              CupertinoPageRoute<bool>(
-                                fullscreenDialog: true,
-                                builder: (BuildContext context) =>
-                                    MyWelcomePage(),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            "More Info?",
-                            style: TextStyle(
-                                letterSpacing: 1.1,
-                                color: Colors.white70,
-                                fontSize: deviceSize.width * 0.045,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'AvenirNext'),
+                            onPressed: () {
+                              HapticFeedback.vibrate();
+                              Navigator.of(context, rootNavigator: true).push(
+                                CupertinoPageRoute<bool>(
+                                  builder: (BuildContext context) =>
+                                      MyLoginPage(),
+                                ),
+                              );
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
                           ),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: deviceSize.width / 9.375)),
+                          OutlineButton(
+                            borderSide: BorderSide(
+                              color: Colors.white, //Color of the border
+                              style: BorderStyle.solid, //Style of the border
+                              width:
+                                  deviceSize.width / 125, //width of the border
+                            ),
+                            highlightElevation: 6,
+                            padding: EdgeInsets.fromLTRB(
+                                deviceSize.height * 0.028,
+                                deviceSize.height * 0.05,
+                                deviceSize.height * 0.028,
+                                deviceSize.height * 0.05),
+                            disabledBorderColor: Colors.white,
+                            highlightedBorderColor: Colors.white,
+                            splashColor: Colors.green[400],
+                            highlightColor: Colors.green,
+                            color: Colors.green,
+                            child: Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: deviceSize.height / 33.83,
+                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'AvenirNext'),
+                            ),
+                            onPressed: () {
+                              HapticFeedback.vibrate();
+                              Navigator.of(context, rootNavigator: false).push(
+                                CupertinoPageRoute<bool>(
+                                  builder: (BuildContext context) =>
+                                      MySignUpPage(),
+                                ),
+                              );
+                            },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                          padding:
+                              EdgeInsets.only(top: deviceSize.height * 0.35)),
+                      GestureDetector(
+                        onTap: () {
+                          HapticFeedback.vibrate();
+                          Navigator.of(context, rootNavigator: true).push(
+                            CupertinoPageRoute<bool>(
+                              fullscreenDialog: true,
+                              builder: (BuildContext context) =>
+                                  MyWelcomePage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "More Info?",
+                          style: TextStyle(
+                              letterSpacing: 1.1,
+                              color: Colors.white70,
+                              fontSize: deviceSize.width * 0.045,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'AvenirNext'),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-          )), onWillPop: () async => false,
+          )),
+      onWillPop: () async => false,
     );
   }
 }

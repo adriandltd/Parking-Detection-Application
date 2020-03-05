@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'dart:io';
-
 import 'home.dart';
 
 
@@ -56,11 +55,6 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
   AnimationController _emailscalecontroller;
   AnimationController _pass1scalecontroller;
   AnimationController _pass2scalecontroller;
-  AnimationController _bemailscalecontroller;
-  AnimationController _webscalecontroller;
-  AnimationController _cityscalecontroller;
-  AnimationController _statescalecontroller;
-  AnimationController _zipscalecontroller;
   AnimationController _continuescalecontroller;
 
   signupwidget() {
@@ -141,7 +135,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.width * 0.1,
+                  top: deviceSize.width * 0.15,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .65, end: 1.0).animate(CurvedAnimation(
@@ -189,7 +183,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
+                  top: deviceSize.height * 0.04,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .6, end: 1.0).animate(CurvedAnimation(
@@ -232,7 +226,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
+                  top: deviceSize.height * 0.04,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .55, end: 1.0).animate(CurvedAnimation(
@@ -258,7 +252,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 color: Colors.white,
                                 width: 2,
                                 style: BorderStyle.solid)),
-                        hintText: 'Personal Email',
+                        hintText: 'Email',
                         hintStyle: TextStyle(
                             color: Colors.white54,
                             fontSize: deviceSize.height * 0.025,
@@ -276,7 +270,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
+                  top: deviceSize.height * 0.04,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .5, end: 1.0).animate(CurvedAnimation(
@@ -319,7 +313,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
+                  top: deviceSize.height * 0.04,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .45, end: 1.0).animate(CurvedAnimation(
@@ -361,221 +355,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
-                )),
-                ScaleTransition(
-                  scale: Tween(begin: .4, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.decelerate,
-                      parent: _bemailscalecontroller)),
-                  child: Container(
-                    width: deviceSize.width * 0.7,
-                    child: TextField(
-                      focusNode: textSixthFocusNode,
-                      obscureText: false,
-                      style: TextStyle(
-                          letterSpacing: 1.5,
-                          color: Colors.white,
-                          fontSize: deviceSize.height * 0.02),
-                      keyboardAppearance: Brightness.light,
-                      decoration: InputDecoration(
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 4.0,
-                                style: BorderStyle.solid)),
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 2,
-                                style: BorderStyle.solid)),
-                        hintText: 'Business Email (optional)',
-                        hintStyle: TextStyle(
-                            color: Colors.white54,
-                            fontSize: deviceSize.height * 0.025,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      textCapitalization: TextCapitalization.none,
-                      autocorrect: false,
-                      controller: businessemailCtrl,
-                      onSubmitted: (nameCtrl) {
-                        FocusScope.of(context)
-                            .requestFocus(textSeventhFocusNode);
-                      },
-                    ),
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
-                )),
-                ScaleTransition(
-                  scale: Tween(begin: .35, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.decelerate, parent: _webscalecontroller)),
-                  child: Container(
-                    width: deviceSize.width * 0.7,
-                    child: TextField(
-                      focusNode: textSeventhFocusNode,
-                      obscureText: false,
-                      style: TextStyle(
-                          letterSpacing: 1.5,
-                          color: Colors.white,
-                          fontSize: deviceSize.height * 0.02),
-                      keyboardAppearance: Brightness.light,
-                      decoration: InputDecoration(
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 4.0,
-                                style: BorderStyle.solid)),
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 2,
-                                style: BorderStyle.solid)),
-                        hintText: 'Website (optional)',
-                        hintStyle: TextStyle(
-                            color: Colors.white54,
-                            fontSize: deviceSize.height * 0.025,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      textCapitalization: TextCapitalization.none,
-                      autocorrect: false,
-                      controller: websiteCtrl,
-                      onSubmitted: (nameCtrl) {
-                        FocusScope.of(context).requestFocus(textEigthFocusNode);
-                      },
-                    ),
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
-                )),
-                ScaleTransition(
-                  scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.decelerate, parent: _cityscalecontroller)),
-                  child: Container(
-                    width: deviceSize.width * 0.7,
-                    child: TextField(
-                      focusNode: textEigthFocusNode,
-                      obscureText: false,
-                      style: TextStyle(
-                          letterSpacing: 1.5,
-                          color: Colors.white,
-                          fontSize: deviceSize.height * 0.02),
-                      keyboardAppearance: Brightness.light,
-                      decoration: InputDecoration(
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 4.0,
-                                style: BorderStyle.solid)),
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 2,
-                                style: BorderStyle.solid)),
-                        hintText: 'City (optional)',
-                        hintStyle: TextStyle(
-                            color: Colors.white54,
-                            fontSize: deviceSize.height * 0.025,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      textCapitalization: TextCapitalization.none,
-                      autocorrect: false,
-                      controller: cityCtrl,
-                      onSubmitted: (nameCtrl) {
-                        FocusScope.of(context).requestFocus(textNinthFocusNode);
-                      },
-                    ),
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
-                )),
-                ScaleTransition(
-                  scale: Tween(begin: .25, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.decelerate, parent: _statescalecontroller)),
-                  child: Container(
-                    width: deviceSize.width * 0.7,
-                    child: TextField(
-                      focusNode: textNinthFocusNode,
-                      obscureText: false,
-                      style: TextStyle(
-                          letterSpacing: 1.5,
-                          color: Colors.white,
-                          fontSize: deviceSize.height * 0.02),
-                      keyboardAppearance: Brightness.light,
-                      decoration: InputDecoration(
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 4.0,
-                                style: BorderStyle.solid)),
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 2,
-                                style: BorderStyle.solid)),
-                        hintText: 'State (optional)',
-                        hintStyle: TextStyle(
-                            color: Colors.white54,
-                            fontSize: deviceSize.height * 0.025,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      textCapitalization: TextCapitalization.none,
-                      autocorrect: false,
-                      controller: stateCtrl,
-                      onSubmitted: (nameCtrl) {
-                        FocusScope.of(context).requestFocus(textTenthFocusNode);
-                      },
-                    ),
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
-                )),
-                ScaleTransition(
-                  scale: Tween(begin: .2, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.decelerate, parent: _zipscalecontroller)),
-                  child: Container(
-                    width: deviceSize.width * 0.7,
-                    child: TextField(
-                      focusNode: textTenthFocusNode,
-                      obscureText: false,
-                      style: TextStyle(
-                          letterSpacing: 1.5,
-                          color: Colors.white,
-                          fontSize: deviceSize.height * 0.02),
-                      keyboardAppearance: Brightness.light,
-                      decoration: InputDecoration(
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 4.0,
-                                style: BorderStyle.solid)),
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.white,
-                                width: 2,
-                                style: BorderStyle.solid)),
-                        hintText: 'Zip (optional)',
-                        hintStyle: TextStyle(
-                            color: Colors.white54,
-                            fontSize: deviceSize.height * 0.025,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      textCapitalization: TextCapitalization.none,
-                      autocorrect: false,
-                      controller: zipCtrl,
-                    ),
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.only(top: deviceSize.height * 0.06)),
+                    padding: EdgeInsets.only(top: deviceSize.height * 0.1)),
                 ScaleTransition(
                   scale: Tween(begin: .15, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.decelerate,
@@ -1062,28 +842,8 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
         AnimationController(vsync: this, duration: Duration(milliseconds: 550));
     _pass2scalecontroller.forward();
 
-    _bemailscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
-    _bemailscalecontroller.forward();
-
-    _webscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
-    _webscalecontroller.forward();
-
-    _cityscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 800));
-    _cityscalecontroller.forward();
-
-    _statescalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
-    _statescalecontroller.forward();
-
-    _zipscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
-    _zipscalecontroller.forward();
-
     _continuescalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1100));
+        vsync: this, duration: Duration(milliseconds: 700));
     _continuescalecontroller.forward();
   }
 
