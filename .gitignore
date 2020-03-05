@@ -1,5 +1,102 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
 # Web related
 lib/generated_plugin_registrant.dart
 
+# Android related
+**/android/**
+**/android/local.properties
+**/android/.gradle/**
+
+# iOS/XCode related
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/DerivedData/
+**/ios/**/Icon?
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/profile
+**/ios/**/xcuserdata
+**/ios/.generated/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
 # Exceptions to above rules.
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# End of https://www.gitignore.io/api/flutter
+*.bin
+*.bin
+*.bin
+*.lock
+*.lock
+android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin
+*.bin
+*.lock
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+android/local.properties
+android/.gradle/4.10.2/fileHashes/fileHashes.bin
+android/.gradle/4.10.2/fileHashes/fileHashes.lock
+android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin
+android/.gradle/4.10.2/javaCompile/jarAnalysis.bin
+android/.gradle/4.10.2/javaCompile/javaCompile.lock
+android/.gradle/4.10.2/javaCompile/taskHistory.bin
+android/.gradle/4.10.2/taskHistory/taskHistory.bin
+android/.gradle/4.10.2/taskHistory/taskHistory.lock
+android/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+android/.gradle/buildOutputCleanup/outputFiles.bin
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+android/local.properties
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+ios/Pods/Manifest.lock
+ios/Runner/GeneratedPluginRegistrant.h
+ios/Runner/GeneratedPluginRegistrant.m
+pubspec.lock
