@@ -208,7 +208,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                         curve: Curves.bounceOut, parent: _logoscalecontroller)),
                     child: Row(
                       children: <Widget>[
-                        Image.asset('assets/komi logo april 2019.png',
+                        Image.asset('assets/parkinglogo.png',
                             scale: determineScaleFactor2(),
                             alignment: Alignment.center),
                         Padding(
@@ -236,12 +236,12 @@ class _MyWelcomePage extends State<MyWelcomePage>
                     child: Row(
                       children: <Widget>[
                         Text(
-                          "A new way\nto work with\na marketing\nagency.",
+                          "The best way\nto find a spot\nin a lot with\nno room",
                           style: TextStyle(
                               letterSpacing: 3,
                               height: 1.05,
                               color: Colors.white,
-                              fontSize: deviceSize.width * 0.14,
+                              fontSize: deviceSize.width * 0.10,
                               fontWeight: FontWeight.w600,
                               fontFamily: 'AvenirNext'),
                         ),
@@ -256,7 +256,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                     child: Row(
                       children: <Widget>[
                         Text(
-                          "There is an ever growing need to establish yourself on\nInstagram. KomiSocial simplifies the experience of\nGrowing & marketing your page with no contracts or\nHidden fees and for 5% the cost of other traditional \nCompetitors. Forget wasting your money on\nWorkshops, online courses, branding specialists,\nAnd traditional marketing agencies, KomiSocial is the \nWay to go!",
+                          "Looking for parking? You're not the only one. With the\nhelp of your local campus parking department, we are\nable to help create a fast and efficient way to find, and \nprovide, you the closest available spot to park\nso that you can reach your class on time.",
                           style: TextStyle(
                               letterSpacing: 1.2,
                               height: 1.15,
@@ -276,7 +276,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                     child: Row(
                       children: <Widget>[
                         Text(
-                          "Other social media\nMarketing agencies & services",
+                          " The reason behind\nparking manager",
                           style: TextStyle(
                               letterSpacing: 2,
                               color: Colors.white,
@@ -304,32 +304,14 @@ class _MyWelcomePage extends State<MyWelcomePage>
                             children: <TextSpan>[
                               TextSpan(
                                 text:
-                                    "1. -17% Average Follower Growth\n2. Bots/Fake Followers\n3. Spam/Fake Activity\n4. No Web Platform (Email)\n5. No Analytics or Reports\n6. Setup Over Email\n7. Basic Strategies (No Real Growth)\n8. Up to ",
+                                    "1. 27% student increase from 2000 to 2017\n2. Reduce emissions \n3. Improve class attendance\n4. Provide a fast and easy experience\n5. Create a safer environment",
                                 style: TextStyle(
                                     height: 1.7,
                                     color: Colors.white,
-                                    fontSize: deviceSize.width * 0.051,
+                                    fontSize: deviceSize.width * 0.050,
                                     fontWeight: FontWeight.w300,
                                     fontFamily: 'AvenirNext'),
                               ),
-                              TextSpan(
-                                text: "\$500",
-                                style: TextStyle(
-                                    height: 1.7,
-                                    color: Colors.white,
-                                    fontSize: deviceSize.width * 0.051,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'AvenirNext'),
-                              ),
-                              TextSpan(
-                                text: " or more!!",
-                                style: TextStyle(
-                                    height: 1.7,
-                                    color: Colors.white,
-                                    fontSize: deviceSize.width * 0.051,
-                                    fontWeight: FontWeight.w300,
-                                    fontFamily: 'AvenirNext'),
-                              )
                             ],
                           ),
                         ),
@@ -341,10 +323,6 @@ class _MyWelcomePage extends State<MyWelcomePage>
                   ScaleTransition(
                       scale: Tween(begin: .2, end: 1.0).animate(CurvedAnimation(
                           curve: Curves.decelerate, parent: _scalecontroller5)),
-                      child: Image.asset(
-                        'assets/komi social white.png',
-                        scale: determineScaleFactor3(),
-                      ),
                       alignment: Alignment.center),
                   Padding(
                       padding: EdgeInsets.only(top: deviceSize.height * 0.008)),
@@ -359,43 +337,13 @@ class _MyWelcomePage extends State<MyWelcomePage>
                               fontSize: deviceSize.height * 0.022,
                               color: Colors.black,
                             ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text:
-                                    "1. +85% Average Follower Growth\n2. Real, Organic Followers\n3. Organic Likes & Comments\n4. Real Time & Weekly Analytics\n5. Advanced niche Audience Growth\n6. Target Optimization\n7. Content Scheduling & Posting\n8. Sponsorship Search\n9. Starting at just ",
-                                style: TextStyle(
-                                    height: 1.65,
-                                    color: Colors.white,
-                                    fontSize: deviceSize.width * 0.051,
-                                    fontWeight: FontWeight.w300,
-                                    fontFamily: 'AvenirNext'),
-                              ),
-                              TextSpan(
-                                text: "\$3.30 ",
-                                style: TextStyle(
-                                    height: 1.65,
-                                    color: Colors.white,
-                                    fontSize: deviceSize.width * 0.051,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'AvenirNext'),
-                              ),
-                              TextSpan(
-                                text: "a day",
-                                style: TextStyle(
-                                    height: 1.65,
-                                    color: Colors.white,
-                                    fontSize: deviceSize.width * 0.051,
-                                    fontWeight: FontWeight.w300,
-                                    fontFamily: 'AvenirNext'),
-                              )
-                            ],
                           ),
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.only(top: deviceSize.height * 0.07)),
+                      padding: EdgeInsets.only(top: deviceSize.height * 0)),
                   ScaleTransition(
                     scale: Tween(begin: .1, end: 1.0).animate(CurvedAnimation(
                         curve: Curves.decelerate, parent: _scalecontroller7)),
@@ -411,7 +359,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                             ),
                             children: <TextSpan>[
                               TextSpan(
-                                text: "Have an ",
+                                text: "Have our ",
                                 style: TextStyle(
                                     height: 1.2,
                                     color: Colors.white,
@@ -419,7 +367,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                                     fontFamily: 'AvenirNext'),
                               ),
                               TextSpan(
-                                text: "account manager ",
+                                text: "parking manager ",
                                 style: TextStyle(
                                     height: 1.2,
                                     color: Colors.white,
@@ -427,7 +375,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                                     fontFamily: 'AvenirNext'),
                               ),
                               TextSpan(
-                                text: "grow your\n",
+                                text: "find a\n",
                                 style: TextStyle(
                                     height: 1.2,
                                     color: Colors.white,
@@ -435,7 +383,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                                     fontFamily: 'AvenirNext'),
                               ),
                               TextSpan(
-                                text: "Instagram audience ",
+                                text: "space ",
                                 style: TextStyle(
                                     height: 1.2,
                                     color: Colors.white,
@@ -443,7 +391,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                                     fontFamily: 'AvenirNext'),
                               ),
                               TextSpan(
-                                text: "in minutes.",
+                                text: "for you in seconds.",
                                 style: TextStyle(
                                     height: 1.2,
                                     color: Colors.white,
@@ -474,7 +422,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightColor: Colors.green,
                       color: Colors.green,
                       child: Text(
-                        "\n\n\n\n\n\nPerform Actions & engagement to\noutreach potential followers.\nLike, comment, follow, unfollow\n\n\n\n\n\n",
+                        "\n\n\n\n\n\nConnection with database\nupdates and provides closest empty\nparking spot for your convenience\n\n\n\n\n\n",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             letterSpacing: 1.2,
@@ -506,7 +454,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightColor: Colors.green,
                       color: Colors.green,
                       child: Text(
-                        "\n\n\n\n\n\nTarget hashtags in your\n niche, usernames who follow your\ncompetitors & locations\nthat match your target audience\n\n\n\n\n\n",
+                        "\n\n\n\n\n\nMinimalistic design prevents\nuser from interacting with device while\ndriving to provide a safe experience \nfor all\n\n\n\n\n\n",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             letterSpacing: 1.2,
@@ -538,7 +486,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                       highlightColor: Colors.green,
                       color: Colors.green,
                       child: Text(
-                        "\n\n\n\n\n\nWe keep your home feed clean\nso that you only see content\nfrom users you follown\n\n\n\n\n",
+                        "\n\n\n\n\n\nLogin with your student email\nor create an account and sign in\n with no fees\n\n\n\n\n",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             letterSpacing: 1.2,
@@ -553,36 +501,10 @@ class _MyWelcomePage extends State<MyWelcomePage>
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.only(top: deviceSize.height * 0.04)),
+                      padding: EdgeInsets.only(top: deviceSize.height * 0)),
                   ScaleTransition(
                     scale: Tween(begin: .1, end: 1.0).animate(CurvedAnimation(
                         curve: Curves.decelerate, parent: _scalecontroller12)),
-                    child: OutlineButton(
-                      borderSide: BorderSide(
-                        color: Colors.white, //Color of the border
-                        style: BorderStyle.solid, //Style of the border
-                        width: deviceSize.width / 100, //width of the border
-                      ),
-                      highlightElevation: 3,
-                      disabledBorderColor: Colors.white,
-                      highlightedBorderColor: Colors.white,
-                      splashColor: Colors.green,
-                      highlightColor: Colors.green,
-                      color: Colors.green,
-                      child: Text(
-                        "\n\n\n\n\n\nSchedule & post your content\non your behalf\n\n\n\n\n",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            letterSpacing: 1.2,
-                            height: 1.4,
-                            color: Colors.white,
-                            fontSize: deviceSize.width * 0.037,
-                            fontWeight: FontWeight.w300,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      onPressed: () {},
-                      shape: CircleBorder(),
-                    ),
                   ),
                   Padding(
                       padding: EdgeInsets.only(top: deviceSize.height * 0.2)),
