@@ -56,6 +56,7 @@ flutter:
   - assets/arrow_right.png
   - assets/findmeparkinglogo.png
   - assets/utrgv-logo.png
+  - assets/parkinglogo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
