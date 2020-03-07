@@ -9,7 +9,7 @@ import 'dart:io' show Platform;
 
 import 'home.dart';
 import 'login.dart';
-import 'signup.dart';
+import 'signup.dart'; 
 import 'welcomepage.dart';
 
 String idToken;
@@ -117,34 +117,34 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
   determineScaleFactorFindMeParking() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 6.25;
+      return 3.0;
     else if (deviceSize.height > 800)
-      return 5.25;
+      return 4.0;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 5.75;
+      return 4.5;
     else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 6.85;
+      return 5.0;
     else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 7.25;
+      return 5.5;
     else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 7.75;
+      return 6.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
   determineScaleFactorUTRGV() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 14.5;
+      return 7.0;
     else if (deviceSize.height > 800)
-      return 14.5;
+      return 8.0;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 13.0;
+      return 8.5;
     else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 14.0;
+      return 9.0;
     else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 14.5;
+      return 9.5;
     else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 15.0;
+      return 10.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
@@ -173,19 +173,19 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
     var deviceSize = MediaQuery.of(context).size;
     return WillPopScope(
       child: Scaffold(
-          backgroundColor: Color.fromRGBO(255, 112, 0, 1),
+          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
           body: AnnotatedRegion<SystemUiOverlayStyle>(
             value: iOSAndroid(),
             sized: false,
             child: Container(
               decoration: BoxDecoration(
                 gradient: RadialGradient(
-                  radius: 1.55,
+                  radius: 1.65,
                   center: Alignment.center,
-                  stops: [.25, .5, 1],
+                  stops: [.25, .4, 1],
                   colors: [
-                    Color.fromRGBO(255, 170, 0, 1),
-                    Color.fromRGBO(255, 135, 0, 1),
+                    Color.fromRGBO(255, 185, 25, 1),
+                    Color.fromRGBO(255, 165, 10, 1),
                     Color.fromRGBO(255, 112, 0, 1),
                   ],
                 ),
@@ -206,7 +206,7 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                           alignment: Alignment.topCenter),
                       Padding(
                           padding: EdgeInsets.only(
-                        top: deviceSize.height * 0.02,
+                        top: deviceSize.height * 0.0035,
                       )),
                       Image.asset(
                         'assets/utrgv-logo.png',
@@ -215,7 +215,7 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                       ),
                       Padding(
                           padding:
-                              EdgeInsets.only(top: deviceSize.height * 0.13)),
+                              EdgeInsets.only(top: deviceSize.height * 0.11)),
                       Row(
                         children: <Widget>[
                           OutlineButton(
@@ -301,7 +301,7 @@ class _MyStartUpPageState extends State<MyStartUpPage> {
                       ),
                       Padding(
                           padding:
-                              EdgeInsets.only(top: deviceSize.height * 0.35)),
+                              EdgeInsets.only(top: deviceSize.height * 0.27)),
                       GestureDetector(
                         onTap: () {
                           HapticFeedback.vibrate();
