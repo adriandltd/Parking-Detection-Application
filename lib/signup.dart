@@ -8,7 +8,6 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'dart:io';
 import 'home.dart';
 
-
 class MySignUpPage extends StatefulWidget {
   MySignUpPage();
   @override
@@ -38,14 +37,9 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
   bool _loading = false;
   var firstNameCtrl = TextEditingController();
   var lastNameCtrl = TextEditingController();
-  var personalemailCtrl = TextEditingController();
+  var emailCtrl = TextEditingController();
   var passwordCtrl = TextEditingController();
   var passwordCtrl2 = TextEditingController();
-  var businessemailCtrl = TextEditingController();
-  var websiteCtrl = TextEditingController();
-  var cityCtrl = TextEditingController();
-  var stateCtrl = TextEditingController();
-  var zipCtrl = TextEditingController();
 
   AnimationController _listscalecontroller;
   AnimationController _logogscalecontroller;
@@ -57,6 +51,15 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
   AnimationController _pass2scalecontroller;
   AnimationController _continuescalecontroller;
 
+  FocusNode textSecondFocusNode = FocusNode();
+  FocusNode textThirdFocusNode = FocusNode();
+  FocusNode textFourthFocusNode = FocusNode();
+  FocusNode textFifthFocusNode = FocusNode();
+  FocusNode textSixthFocusNode = FocusNode();
+  FocusNode textSeventhFocusNode = FocusNode();
+  FocusNode textEigthFocusNode = FocusNode();
+  FocusNode textNinthFocusNode = FocusNode();
+  FocusNode textTenthFocusNode = FocusNode();
   signupwidget() {
     var deviceSize = MediaQuery.of(context).size;
     return Container(
@@ -260,7 +263,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                       ),
                       textCapitalization: TextCapitalization.none,
                       autocorrect: false,
-                      controller: personalemailCtrl,
+                      controller: emailCtrl,
                       onSubmitted: (nameCtrl) {
                         FocusScope.of(context)
                             .requestFocus(textFourthFocusNode);
@@ -354,8 +357,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Padding(
-                    padding: EdgeInsets.only(top: deviceSize.height * 0.1)),
+                Padding(padding: EdgeInsets.only(top: deviceSize.height * 0.1)),
                 ScaleTransition(
                   scale: Tween(begin: .15, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.decelerate,
@@ -460,7 +462,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
           connectedToInternet) {
         try {
           await _auth.createUserWithEmailAndPassword(
-            email: personalemailCtrl.text,
+            email: emailCtrl.text,
             password: passwordCtrl.text,
           );
         } catch (e) {
@@ -520,7 +522,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
               (validemail == true) &&
               firstNameCtrl.text.isNotEmpty &&
               lastNameCtrl.text.isNotEmpty &&
-              personalemailCtrl.text.isNotEmpty) {
+              emailCtrl.text.isNotEmpty) {
             FirebaseAuth.instance.currentUser().then((val) {
               UserUpdateInfo updateUser = UserUpdateInfo();
               updateUser.displayName =
@@ -572,7 +574,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     ],
                   );
                 });
-          } else if (!(personalemailCtrl.text.contains('@')) ||
+          } else if (!(emailCtrl.text.contains('@')) ||
               validemail == false) {
             print("email/password invalid");
             showDialog<void>(
@@ -798,15 +800,6 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
     });
   }
 
-  FocusNode textSecondFocusNode = FocusNode();
-  FocusNode textThirdFocusNode = FocusNode();
-  FocusNode textFourthFocusNode = FocusNode();
-  FocusNode textFifthFocusNode = FocusNode();
-  FocusNode textSixthFocusNode = FocusNode();
-  FocusNode textSeventhFocusNode = FocusNode();
-  FocusNode textEigthFocusNode = FocusNode();
-  FocusNode textNinthFocusNode = FocusNode();
-  FocusNode textTenthFocusNode = FocusNode();
   @override
   void initState() {
     super.initState();
@@ -842,8 +835,8 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
         AnimationController(vsync: this, duration: Duration(milliseconds: 550));
     _pass2scalecontroller.forward();
 
-    _continuescalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 700));
+    _continuescalecontroller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
     _continuescalecontroller.forward();
   }
 
