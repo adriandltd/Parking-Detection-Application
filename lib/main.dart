@@ -393,9 +393,12 @@ class _MyLoginPageState extends State<MyStartUpPage>
           center: Alignment.center,
           stops: [.25, .4, 1],
           colors: [
-            Color.fromRGBO(255, 175, 25, 1),
-            Color.fromRGBO(255, 155, 10, 1),
-            Color.fromRGBO(255, 112, 0, 1),
+            Color.fromRGBO(30, 30, 30, 1),
+            Color.fromRGBO(20, 20, 20, 1),
+            Color.fromRGBO(0, 0, 0, 1),
+            /*Color.fromRGBO(255, 170, 0, 1),
+            Color.fromRGBO(255, 150, 0, 1),
+            Color.fromRGBO(255, 112, 0, 1),*/
           ],
         ),
       ),
@@ -531,43 +534,53 @@ class _MyLoginPageState extends State<MyStartUpPage>
                   Padding(
                       padding: EdgeInsets.only(top: deviceSize.height * 0.07)),
                   ScaleTransition(
-                    scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
-                        curve: Curves.decelerate,
-                        parent: _loginscalecontroller)),
-                    child: OutlineButton(
-                      borderSide: BorderSide(
-                        color: Colors.white, //Color of the border
-                        style: BorderStyle.solid, //Style of the border
-                        width: deviceSize.width / 150, //width of the border
-                      ),
-                      highlightElevation: 3,
-                      padding: EdgeInsets.fromLTRB(
-                          deviceSize.width * 0.25,
-                          deviceSize.height * 0.023,
-                          deviceSize.width * 0.25,
-                          deviceSize.height * 0.023),
-                      disabledBorderColor: Colors.white,
-                      highlightedBorderColor: Colors.white,
-                      splashColor: Colors.green,
-                      highlightColor: Colors.green,
-                      color: Colors.green,
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                            letterSpacing: 1.2,
-                            color: Colors.white,
-                            fontSize: deviceSize.height * 0.02,
-                            fontWeight: FontWeight.w300,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      onPressed: () {
-                        HapticFeedback.vibrate();
-                        signInWithEmail(context);
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                    ),
-                  ),
+                      scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
+                          curve: Curves.decelerate,
+                          parent: _loginscalecontroller)),
+                      child: FlatButton(
+                        color: Colors.white10,
+                        padding: EdgeInsets.fromLTRB(
+                            deviceSize.width * 0.001,
+                            deviceSize.height * 0.001,
+                            deviceSize.width * 0.001,
+                            deviceSize.height * 0.001),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        onPressed: () => {},
+                        child: OutlineButton(
+                          borderSide: BorderSide(
+                            color: Colors.white, //Color of the border
+                            style: BorderStyle.solid, //Style of the border
+                            width: deviceSize.width / 250, //width of the border
+                          ),
+                          highlightElevation: 3,
+                          padding: EdgeInsets.fromLTRB(
+                              deviceSize.width * 0.33,
+                              deviceSize.height * 0.023,
+                              deviceSize.width * 0.33,
+                              deviceSize.height * 0.023),
+                          disabledBorderColor: Colors.white,
+                          highlightedBorderColor: Colors.white,
+                          splashColor: Colors.orange,
+                          highlightColor: Color.fromRGBO(255, 112, 0, 1),
+                          color: Color.fromRGBO(255, 112, 0, 1),
+                          child: Text(
+                            "Log In",
+                            style: TextStyle(
+                                letterSpacing: 1.2,
+                                color: Colors.white,
+                                fontSize: deviceSize.height * 0.02,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'AvenirNext'),
+                          ),
+                          onPressed: () {
+                            HapticFeedback.vibrate();
+                            signInWithEmail(context);
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                      )),
                   Padding(
                       padding: EdgeInsets.only(top: deviceSize.height * 0.1)),
                   ScaleTransition(
@@ -609,7 +622,7 @@ class _MyLoginPageState extends State<MyStartUpPage>
                               TextSpan(
                                 text: "?",
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.white70,
                                     fontWeight: FontWeight.w300,
                                     fontFamily: 'AvenirNext'),
                               ),

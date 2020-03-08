@@ -81,7 +81,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                     children: <Widget>[
                       Padding(
                           padding: EdgeInsets.only(
-                        top: deviceSize.height * 0.15,
+                        top: deviceSize.height * 0.1,
                       )),
                       IconButton(
                         onPressed: () {

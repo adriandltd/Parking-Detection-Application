@@ -90,7 +90,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     children: <Widget>[
                       Padding(
                           padding: EdgeInsets.only(
-                        top: deviceSize.height * 0.2,
+                        top: deviceSize.height * 0.1,
                       )),
                       IconButton(
                         onPressed: () {
@@ -101,26 +101,24 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                           Icons.arrow_back_ios,
                           color: Colors.white,
                         ),
-                        iconSize: deviceSize.width * 0.14,
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(
-                        left: deviceSize.width * 0.11,
-                      )),
-                      ScaleTransition(
-                        scale: Tween(begin: .7, end: 1.0).animate(
-                            CurvedAnimation(
-                                curve: Curves.bounceOut,
-                                parent: _logogscalecontroller)),
-                        child: Center(
-                          child: Image.asset('assets/komi logo april 2019.png',
-                              scale: determineScaleFactor(),
-                              alignment: Alignment.center),
-                        ),
+                        iconSize: deviceSize.height * 0.065,
                       ),
                     ],
                   ),
                 ),
+                ScaleTransition(
+                  scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
+                      curve: Curves.bounceOut, parent: _logogscalecontroller)),
+                  child: Center(
+                    child: Image.asset('assets/komi logo april 2019.png',
+                        scale: determineScaleFactor(),
+                        alignment: Alignment.center),
+                  ),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(
+                  top: deviceSize.height * 0.05,
+                )),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.bounceOut, parent: _signupscalecontroller)),
@@ -138,7 +136,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.width * 0.15,
+                  top: deviceSize.width * 0.125,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .65, end: 1.0).animate(CurvedAnimation(
@@ -357,7 +355,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: deviceSize.height * 0.1)),
+                Padding(padding: EdgeInsets.only(top: deviceSize.height * 0.065)),
                 ScaleTransition(
                   scale: Tween(begin: .15, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.decelerate,
@@ -574,8 +572,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     ],
                   );
                 });
-          } else if (!(emailCtrl.text.contains('@')) ||
-              validemail == false) {
+          } else if (!(emailCtrl.text.contains('@')) || validemail == false) {
             print("email/password invalid");
             showDialog<void>(
               context: context,
