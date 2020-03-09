@@ -538,7 +538,7 @@ class _MyLoginPageState extends State<MyStartUpPage>
                           curve: Curves.decelerate,
                           parent: _loginscalecontroller)),
                       child: FlatButton(
-                        color: Colors.white10,
+                        color: Colors.white12,
                         padding: EdgeInsets.fromLTRB(
                             deviceSize.width * 0.001,
                             deviceSize.height * 0.001,

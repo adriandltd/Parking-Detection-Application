@@ -65,14 +65,14 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
     return Container(
       decoration: BoxDecoration(
         gradient: RadialGradient(
-          radius: 1.45,
-          center: Alignment.center,
-          stops: [.25, .45, .85, 1],
-          colors: [
-            Color.fromRGBO(255, 160, 0, 1),
-            Color.fromRGBO(255, 140, 0, 1),
-            Color.fromRGBO(255, 120, 0, 1),
-            Color.fromRGBO(255, 112, 0, 1),
+          radius: .75,
+            center: Alignment.center,
+            stops: [.25, .45, .85, 1],
+            colors: [
+              Color.fromRGBO(255, 160, 0, 1),
+              Color.fromRGBO(255, 140, 0, 1),
+              Color.fromRGBO(255, 120, 0, 1),
+              Color.fromRGBO(255, 112, 0, 1),
           ],
         ),
       ),
@@ -90,7 +90,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     children: <Widget>[
                       Padding(
                           padding: EdgeInsets.only(
-                        top: deviceSize.height * 0.1,
+                        top: deviceSize.height * 0.125,
                       )),
                       IconButton(
                         onPressed: () {
@@ -108,20 +108,20 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.bounceOut, parent: _logogscalecontroller)),
+                      curve: Curves.decelerate, parent: _logogscalecontroller)),
                   child: Center(
-                    child: Image.asset('assets/komi logo april 2019.png',
+                    child: Image.asset('assets/findmeparkingicon.png',
                         scale: determineScaleFactor(),
                         alignment: Alignment.center),
                   ),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.05,
+                  top: deviceSize.height * 0.04,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.bounceOut, parent: _signupscalecontroller)),
+                      curve: Curves.decelerate, parent: _signupscalecontroller)),
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
@@ -129,14 +129,14 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                         height: .2,
                         color: Colors.white,
                         fontSize: deviceSize.width * 0.085,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         fontFamily: 'AvenirNext'),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.width * 0.125,
+                  top: deviceSize.width * 0.075,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .65, end: 1.0).animate(CurvedAnimation(
@@ -172,7 +172,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 style: BorderStyle.solid)),
                         hintText: 'First Name',
                         hintStyle: TextStyle(
-                            color: Colors.white54,
+                            color: Colors.white70,
                             fontSize: deviceSize.height * 0.025,
                             fontFamily: 'AvenirNext'),
                       ),
@@ -212,7 +212,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 style: BorderStyle.solid)),
                         hintText: 'Last Name',
                         hintStyle: TextStyle(
-                            color: Colors.white54,
+                            color: Colors.white70,
                             fontSize: deviceSize.height * 0.025,
                             fontFamily: 'AvenirNext'),
                       ),
@@ -255,7 +255,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 style: BorderStyle.solid)),
                         hintText: 'Email',
                         hintStyle: TextStyle(
-                            color: Colors.white54,
+                            color: Colors.white70,
                             fontSize: deviceSize.height * 0.025,
                             fontFamily: 'AvenirNext'),
                       ),
@@ -299,7 +299,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 style: BorderStyle.solid)),
                         hintText: 'Password',
                         hintStyle: TextStyle(
-                            color: Colors.white54,
+                            color: Colors.white70,
                             fontSize: deviceSize.height * 0.025,
                             fontFamily: 'AvenirNext'),
                       ),
@@ -342,7 +342,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                                 style: BorderStyle.solid)),
                         hintText: 'Confirm Password',
                         hintStyle: TextStyle(
-                            color: Colors.white54,
+                            color: Colors.white70,
                             fontSize: deviceSize.height * 0.025,
                             fontFamily: 'AvenirNext'),
                       ),
@@ -355,26 +355,52 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: deviceSize.height * 0.065)),
+                Padding(padding: EdgeInsets.only(top: deviceSize.height * 0.055)),
                 ScaleTransition(
                   scale: Tween(begin: .15, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.decelerate,
                       parent: _continuescalecontroller)),
-                  child: Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        HapticFeedback.vibrate();
-                        signUpWithEmail(context);
-                      },
+                  child: FlatButton(
+                    color: Colors.white12,
+                    padding: EdgeInsets.fromLTRB(
+                        deviceSize.width * 0.001,
+                        deviceSize.height * 0.001,
+                        deviceSize.width * 0.001,
+                        deviceSize.height * 0.001),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)),
+                    onPressed: () => {},
+                    child: OutlineButton(
+                      borderSide: BorderSide(
+                        color: Colors.white, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: deviceSize.width / 250, //width of the border
+                      ),
+                      highlightElevation: 3,
+                      padding: EdgeInsets.fromLTRB(
+                          deviceSize.width * 0.325,
+                          deviceSize.height * 0.023,
+                          deviceSize.width * 0.325,
+                          deviceSize.height * 0.023),
+                      disabledBorderColor: Colors.white,
+                      highlightedBorderColor: Colors.white,
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
                       child: Text(
-                        "Continue",
+                        "Submit",
                         style: TextStyle(
-                            letterSpacing: 1.2,
                             color: Colors.white,
-                            fontSize: deviceSize.width * 0.055,
+                            fontSize: deviceSize.height * 0.022,
                             fontWeight: FontWeight.w300,
                             fontFamily: 'AvenirNext'),
                       ),
+                      onPressed: () async {
+                        HapticFeedback.vibrate();
+                        signUpWithEmail(context);
+                      },
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
                     ),
                   ),
                 ),
@@ -801,39 +827,39 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _listscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 650));
     _listscalecontroller.forward();
 
     _logogscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1300));
+        vsync: this, duration: Duration(milliseconds: 400));
     _logogscalecontroller.forward();
 
     _signupscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1300));
+        vsync: this, duration: Duration(milliseconds: 425));
     _signupscalecontroller.forward();
 
     _fnamescalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 475));
     _fnamescalecontroller.forward();
 
     _lnamescalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 325));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 550));
     _lnamescalecontroller.forward();
 
     _emailscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 375));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 650));
     _emailscalecontroller.forward();
 
     _pass1scalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 475));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 750));
     _pass1scalecontroller.forward();
 
     _pass2scalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 550));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 850));
     _pass2scalecontroller.forward();
 
     _continuescalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 900));
     _continuescalecontroller.forward();
   }
 

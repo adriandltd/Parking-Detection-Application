@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,22 +20,22 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
   determineScaleFactor() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 5.5;
-    else if (deviceSize.height > 800)
       return 6.5;
+    else if (deviceSize.height > 800)
+      return 7.5;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 7.0;
-    else if (deviceSize.height > 600 && deviceSize.height < 700)
       return 8.0;
-    else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 8.5;
-    else if (deviceSize.height > 400 && deviceSize.height < 500)
+    else if (deviceSize.height > 600 && deviceSize.height < 700)
       return 9.0;
+    else if (deviceSize.height > 500 && deviceSize.height < 600)
+      return 9.5;
+    else if (deviceSize.height > 400 && deviceSize.height < 500)
+      return 10.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
   AnimationController _listscalecontroller;
-  AnimationController _welcomescalecontroller;
+  AnimationController _forgotpasswordtextscalecontroller;
   AnimationController _logoscalecontroller;
   AnimationController _emailcontroller;
   AnimationController _loginscalecontroller;
@@ -57,11 +56,11 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
             radius: .62,
             center: Alignment.center,
             stops: [.25, .45, .85, 1],
-          colors: [
-            Color.fromRGBO(255, 160, 0, 1),
-            Color.fromRGBO(255, 140, 0, 1),
-            Color.fromRGBO(255, 120, 0, 1),
-            Color.fromRGBO(255, 112, 0, 1),
+            colors: [
+              Color.fromRGBO(255, 160, 0, 1),
+              Color.fromRGBO(255, 140, 0, 1),
+              Color.fromRGBO(255, 120, 0, 1),
+              Color.fromRGBO(255, 112, 0, 1),
             ],
           ),
         ),
@@ -98,21 +97,21 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                   ),
                 ),
                 Padding(
-                          padding: EdgeInsets.only(
-                        top: deviceSize.height * 0.065,
-                      )),
+                    padding: EdgeInsets.only(
+                  top: deviceSize.height * 0.065,
+                )),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.bounceOut, parent: _logoscalecontroller)),
+                      curve: Curves.decelerate, parent: _logoscalecontroller)),
                   child: Center(
-                    child: Image.asset('assets/komi logo april 2019.png',
+                    child: Image.asset('assets/findmeparkingicon.png',
                         scale: determineScaleFactor(),
                         alignment: Alignment.center),
                   ),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.02,
+                  top: deviceSize.height * 0.005,
                 )),
                 ScaleTransition(
                     child: Center(
@@ -122,13 +121,13 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                             letterSpacing: 1.5,
                             color: Colors.white,
                             fontSize: deviceSize.height * 0.04,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w600,
                             fontFamily: 'AvenirNext'),
                       ),
                     ),
                     scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                        curve: Curves.bounceOut,
-                        parent: _welcomescalecontroller))),
+                        curve: Curves.decelerate,
+                        parent: _forgotpasswordtextscalecontroller))),
                 Padding(
                     padding: EdgeInsets.only(
                   top: deviceSize.height * 0.04,
@@ -172,190 +171,201 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(top: deviceSize.height * 0.07)),
+                    padding: EdgeInsets.only(top: deviceSize.height * 0.075)),
                 ScaleTransition(
                   scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.decelerate, parent: _loginscalecontroller)),
-                  child: OutlineButton(
-                    borderSide: BorderSide(
-                      color: Colors.white, //Color of the border
-                      style: BorderStyle.solid, //Style of the border
-                      width: deviceSize.width / 150, //width of the border
-                    ),
-                    highlightElevation: 3,
+                  child: FlatButton(
+                    color: Colors.white12,
                     padding: EdgeInsets.fromLTRB(
-                        deviceSize.width * 0.25,
-                        deviceSize.height * 0.023,
-                        deviceSize.width * 0.25,
-                        deviceSize.height * 0.023),
-                    disabledBorderColor: Colors.white,
-                    highlightedBorderColor: Colors.white,
-                    splashColor: Colors.green,
-                    highlightColor: Colors.green,
-                    color: Colors.green,
-                    child: Text(
-                      "Reset",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: deviceSize.height * 0.022,
-                          fontWeight: FontWeight.w300,
-                          fontFamily: 'AvenirNext'),
-                    ),
-                    onPressed: () async {
-                      HapticFeedback.vibrate();
-                      setState(() {
-                        _loading = true;
-                      });
-                      bool connectedToInternet;
-                      try {
+                        deviceSize.width * 0.001,
+                        deviceSize.height * 0.001,
+                        deviceSize.width * 0.001,
+                        deviceSize.height * 0.001),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)),
+                    onPressed: () => {},
+                    child: OutlineButton(
+                      borderSide: BorderSide(
+                        color: Colors.white, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: deviceSize.width / 250, //width of the border
+                      ),
+                      highlightElevation: 3,
+                      padding: EdgeInsets.fromLTRB(
+                          deviceSize.width * 0.3425,
+                          deviceSize.height * 0.023,
+                          deviceSize.width * 0.3425,
+                          deviceSize.height * 0.023),
+                      disabledBorderColor: Colors.white,
+                      highlightedBorderColor: Colors.white,
+                      splashColor: Colors.green,
+                      highlightColor: Colors.green,
+                      color: Colors.green,
+                      child: Text(
+                        "Reset",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: deviceSize.height * 0.022,
+                            fontWeight: FontWeight.w300,
+                            fontFamily: 'AvenirNext'),
+                      ),
+                      onPressed: () async {
+                        HapticFeedback.vibrate();
                         setState(() {
                           _loading = true;
                         });
-                        final result =
-                            await InternetAddress.lookup('google.com');
-                        if (result.isNotEmpty &&
-                            result[0].rawAddress.isNotEmpty) {
-                          print('connected');
-                          connectedToInternet = true;
+                        bool connectedToInternet;
+                        try {
+                          setState(() {
+                            _loading = true;
+                          });
+                          final result =
+                              await InternetAddress.lookup('google.com');
+                          if (result.isNotEmpty &&
+                              result[0].rawAddress.isNotEmpty) {
+                            print('connected');
+                            connectedToInternet = true;
+                          }
+                        } on SocketException catch (_) {
+                          print('not connected');
+                          connectedToInternet = false;
                         }
-                      } on SocketException catch (_) {
-                        print('not connected');
-                        connectedToInternet = false;
-                      }
-                      Future.delayed(const Duration(milliseconds: 1500), () {
-                        sendPasswordResetEmail(emailCtrl.text);
-                        setState(() {
-                          _loading = false;
+                        Future.delayed(const Duration(milliseconds: 1500), () {
+                          sendPasswordResetEmail(emailCtrl.text);
+                          setState(() {
+                            _loading = false;
+                          });
+                          if (connectedToInternet == false) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    titlePadding: EdgeInsets.only(
+                                        top: 35, left: 10, right: 10),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(15.0))),
+                                    title: const Text(
+                                      'Please check your connection.',
+                                      style: TextStyle(
+                                          letterSpacing: 1.1,
+                                          height: 1.1,
+                                          fontSize: 22,
+                                          fontFamily: 'AvenirNext',
+                                          fontWeight: FontWeight.w400),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20.0))),
+                                        color: Color.fromRGBO(255, 112, 0, 1),
+                                        child: Text('Ok',
+                                            style: TextStyle(
+                                                letterSpacing: 1.1,
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontFamily: 'AvenirNext',
+                                                fontWeight: FontWeight.w400)),
+                                        onPressed: () {
+                                          HapticFeedback.vibrate();
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                });
+                          } else if (emailCtrl.text.contains('@') &&
+                              emailCtrl.text.isNotEmpty) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    titlePadding: EdgeInsets.only(
+                                        top: 35, left: 10, right: 10),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(15.0))),
+                                    title: const Text(
+                                      'Password reset link has been sent to the submitted email.',
+                                      style: TextStyle(
+                                          letterSpacing: 1.1,
+                                          height: 1.1,
+                                          fontSize: 22,
+                                          fontFamily: 'AvenirNext',
+                                          fontWeight: FontWeight.w400),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20.0))),
+                                        color: Color.fromRGBO(255, 112, 0, 1),
+                                        child: Text('Ok',
+                                            style: TextStyle(
+                                                letterSpacing: 1.1,
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontFamily: 'AvenirNext',
+                                                fontWeight: FontWeight.w400)),
+                                        onPressed: () {
+                                          HapticFeedback.vibrate();
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                });
+                          } else {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    titlePadding: EdgeInsets.only(
+                                        top: 35, left: 10, right: 10),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(15.0))),
+                                    title: const Text(
+                                      'Please provide a valid email.',
+                                      style: TextStyle(
+                                          letterSpacing: 1.1,
+                                          height: 1.1,
+                                          fontSize: 22,
+                                          fontFamily: 'AvenirNext',
+                                          fontWeight: FontWeight.w400),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(20.0))),
+                                        color: Color.fromRGBO(255, 112, 0, 1),
+                                        child: Text('Ok',
+                                            style: TextStyle(
+                                                letterSpacing: 1.1,
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontFamily: 'AvenirNext',
+                                                fontWeight: FontWeight.w400)),
+                                        onPressed: () {
+                                          HapticFeedback.vibrate();
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                });
+                          }
                         });
-                        if (connectedToInternet == false) {
-                          showDialog<void>(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  titlePadding: EdgeInsets.only(
-                                      top: 35, left: 10, right: 10),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0))),
-                                  title: const Text(
-                                    'Please check your connection.',
-                                    style: TextStyle(
-                                        letterSpacing: 1.1,
-                                        height: 1.1,
-                                        fontSize: 22,
-                                        fontFamily: 'AvenirNext',
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20.0))),
-                                      color: Color.fromRGBO(255, 112, 0, 1),
-                                      child: Text('Ok',
-                                          style: TextStyle(
-                                              letterSpacing: 1.1,
-                                              fontSize: 14,
-                                              color: Colors.white,
-                                              fontFamily: 'AvenirNext',
-                                              fontWeight: FontWeight.w400)),
-                                      onPressed: () {
-                                        HapticFeedback.vibrate();
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              });
-                        } else if (emailCtrl.text.contains('@') &&
-                            emailCtrl.text.isNotEmpty) {
-                          showDialog<void>(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  titlePadding: EdgeInsets.only(
-                                      top: 35, left: 10, right: 10),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0))),
-                                  title: const Text(
-                                    'Password reset link has been sent to the submitted email.',
-                                    style: TextStyle(
-                                        letterSpacing: 1.1,
-                                        height: 1.1,
-                                        fontSize: 22,
-                                        fontFamily: 'AvenirNext',
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20.0))),
-                                      color: Color.fromRGBO(255, 112, 0, 1),
-                                      child: Text('Ok',
-                                          style: TextStyle(
-                                              letterSpacing: 1.1,
-                                              fontSize: 14,
-                                              color: Colors.white,
-                                              fontFamily: 'AvenirNext',
-                                              fontWeight: FontWeight.w400)),
-                                      onPressed: () {
-                                        HapticFeedback.vibrate();
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              });
-                        } else {
-                          showDialog<void>(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  titlePadding: EdgeInsets.only(
-                                      top: 35, left: 10, right: 10),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0))),
-                                  title: const Text(
-                                    'Please provide a valid email.',
-                                    style: TextStyle(
-                                        letterSpacing: 1.1,
-                                        height: 1.1,
-                                        fontSize: 22,
-                                        fontFamily: 'AvenirNext',
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(20.0))),
-                                      color: Color.fromRGBO(255, 112, 0, 1),
-                                      child: Text('Ok',
-                                          style: TextStyle(
-                                              letterSpacing: 1.1,
-                                              fontSize: 14,
-                                              color: Colors.white,
-                                              fontFamily: 'AvenirNext',
-                                              fontWeight: FontWeight.w400)),
-                                      onPressed: () {
-                                        HapticFeedback.vibrate();
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              });
-                        }
-                      });
-                    },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
+                      },
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                    ),
                   ),
                 )
               ],
@@ -370,16 +380,16 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
         AnimationController(vsync: this, duration: Duration(milliseconds: 900));
     _listscalecontroller.forward();
     _logoscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1300));
+        vsync: this, duration: Duration(milliseconds: 450));
     _logoscalecontroller.forward();
-    _welcomescalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1300));
-    _welcomescalecontroller.forward();
+    _forgotpasswordtextscalecontroller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 500));
+    _forgotpasswordtextscalecontroller.forward();
     _emailcontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 350));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
     _emailcontroller.forward();
     _loginscalecontroller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
     _loginscalecontroller.forward();
   }
 
