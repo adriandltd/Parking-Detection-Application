@@ -81,7 +81,7 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                     children: <Widget>[
                       Padding(
                           padding: EdgeInsets.only(
-                        top: deviceSize.height * 0.1,
+                        top: deviceSize.height * 0.12,
                       )),
                       IconButton(
                         onPressed: () {
@@ -97,6 +97,10 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                     ],
                   ),
                 ),
+                Padding(
+                          padding: EdgeInsets.only(
+                        top: deviceSize.height * 0.065,
+                      )),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.bounceOut, parent: _logoscalecontroller)),
