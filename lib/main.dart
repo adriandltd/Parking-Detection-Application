@@ -676,7 +676,7 @@ class _MyLoginPageState extends State<MyStartUpPage>
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.only(top: deviceSize.height * 0.1)),
+                      padding: EdgeInsets.only(top: deviceSize.height * 0.06)),
                   Center(
                     child: GestureDetector(
                       onTap: () {
