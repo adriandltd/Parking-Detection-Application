@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -391,13 +389,35 @@ class FindMeParkingPage extends StatefulWidget {
 
 class _FindMeParkingPage extends State<FindMeParkingPage>
     with TickerProviderStateMixin {
-  AnimationController _sidebarcontroller;
+  AnimationController _audiencetargeting1controller;
+  AnimationController _audiencetargeting2controller;
+  AnimationController _audiencetargeting3controller;
+  AnimationController _audiencetargeting4controller;
 
-  _FindMeParkingPage();
+  Animation<Offset> _audiencetargetingoffsetFloat;
+
   @override
   void initState() {
-    setState(() {});
     super.initState();
+
+    _audiencetargeting1controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 385));
+    _audiencetargeting1controller.forward();
+
+    _audiencetargeting2controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 650));
+    _audiencetargeting2controller.forward();
+    _audiencetargeting3controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 800));
+    _audiencetargeting3controller.forward();
+
+    _audiencetargeting4controller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 1000));
+    _audiencetargeting4controller.forward();
+
+    _audiencetargetingoffsetFloat =
+        Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset.zero)
+            .animate(_audiencetargeting1controller);
   }
 
   /*RefreshController _refreshController =
@@ -423,37 +443,124 @@ class _FindMeParkingPage extends State<FindMeParkingPage>
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            stops: [.33, .66, 1],
-            colors: [
-              Color.fromRGBO(30, 30, 30, 1),
-              Color.fromRGBO(20, 20, 20, 1),
-              Color.fromRGBO(0, 0, 0, 1),
-            ],
-          ),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          stops: [.33, .66, 1],
+          colors: [
+            Color.fromRGBO(30, 30, 30, 1),
+            Color.fromRGBO(20, 20, 20, 1),
+            Color.fromRGBO(0, 0, 0, 1),
+          ],
         ),
-        height: deviceSize.height,
-        width: deviceSize.width,
-        child: Container(
-            width: deviceSize.width,
-            child: Align(
-                alignment: Alignment.topLeft,
-                child: SizedBox(
-                  width: deviceSize.width * 0.88,
-                  child: Container(
-                      child: Text(
-                    "HomePage",
+      ),
+      height: deviceSize.height,
+      width: deviceSize.width,
+      child: SlideTransition(
+        position: _audiencetargetingoffsetFloat,
+        child: Column(
+          children: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(
+              top: deviceSize.height * 0.25,
+            )),
+            ScaleTransition(
+              scale: Tween(begin: .4, end: 1.0).animate(CurvedAnimation(
+                  curve: Curves.decelerate,
+                  parent: _audiencetargeting3controller)),
+              child: OutlineButton(
+                borderSide: BorderSide(
+                  color: Colors.white, //Color of the border
+                  style: BorderStyle.solid, //Style of the border
+                  width: deviceSize.width / 150, //width of the border
+                ),
+                highlightElevation: 3,
+                padding: EdgeInsets.fromLTRB(
+                    deviceSize.width * 0.13,
+                    deviceSize.height * 0.025,
+                    deviceSize.width * 0.13,
+                    deviceSize.height * 0.025),
+                disabledBorderColor: Colors.white,
+                highlightedBorderColor: Colors.white,
+                splashColor: Color.fromRGBO(255, 112, 0, 1),
+                highlightColor: Color.fromRGBO(255, 112, 0, 1),
+                color: Color.fromRGBO(255, 112, 0, 1),
+                child: Text(
+                  "Preferred Building",
+                  style: TextStyle(
+                      letterSpacing: 0.8,
+                      color: Colors.white,
+                      fontSize: deviceSize.width * 0.05,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'AvenirNext'),
+                ),
+                onPressed: () {
+                  HapticFeedback.vibrate();
+                  /*Navigator.of(context, rootNavigator: false).push(
+                    CupertinoPageRoute<bool>(
+                      fullscreenDialog: false,
+                      builder: (BuildContext context) => UsernameTargetPage(),
+                    ),
+                  );*/
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(
+              top: deviceSize.height * 0.08,
+            )),
+            ScaleTransition(
+              scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
+                  curve: Curves.decelerate,
+                  parent: _audiencetargeting4controller)),
+              child: Container(
+                child: OutlineButton(
+                  borderSide: BorderSide(
+                    color: Colors.white, //Color of the border
+                    style: BorderStyle.solid, //Style of the border
+                    width: deviceSize.width / 150, //width of the border
+                  ),
+                  highlightElevation: 3,
+                  padding: EdgeInsets.fromLTRB(
+                      deviceSize.width * 0.125,
+                      deviceSize.height * 0.024,
+                      deviceSize.width * 0.125,
+                      deviceSize.height * 0.024),
+                  disabledBorderColor: Colors.white,
+                  highlightedBorderColor: Colors.white,
+                  splashColor: Color.fromRGBO(255, 112, 0, 1),
+                  highlightColor: Color.fromRGBO(255, 112, 0, 1),
+                  color: Color.fromRGBO(255, 112, 0, 1),
+                  child: Text(
+                    "Permit Zone",
                     style: TextStyle(
-                        letterSpacing: 1,
+                        letterSpacing: 1.5,
                         color: Colors.white,
-                        fontSize: deviceSize.height * 0.025,
-                        fontWeight: FontWeight.w500,
+                        fontSize: deviceSize.width * 0.051,
+                        fontWeight: FontWeight.w400,
                         fontFamily: 'AvenirNext'),
-                  )),
-                ))));
+                  ),
+                  onPressed: () {
+                    HapticFeedback.vibrate();
+                    /*Navigator.of(context, rootNavigator: false).push(
+                      CupertinoPageRoute<bool>(
+                        fullscreenDialog: false,
+                        builder: (BuildContext context) => HashtagTargetPage(),
+                      ),
+                    );*/
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -520,127 +627,10 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
         position: _audiencetargetingoffsetFloat,
         child: Column(
           children: <Widget>[
-            ScaleTransition(
-              scale: Tween(begin: .65, end: 1.0).animate(CurvedAnimation(
-                  curve: Curves.decelerate,
-                  parent: _audiencetargeting2controller)),
-              child: Text(
-                "Audience Targeting",
-                style: TextStyle(
-                    height: 1.5,
-                    color: Colors.white,
-                    fontSize: deviceSize.width * 0.09,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'AvenirNext'),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            ScaleTransition(
-                scale: Tween(begin: .65, end: 1.0).animate(CurvedAnimation(
-                    curve: Curves.decelerate,
-                    parent: _audiencetargeting2controller)),
-                child: Divider(
-                  color: Colors.grey[300],
-                  indent: 55,
-                  endIndent: 55,
-                  height: 5,
-                )),
-            Padding(
-                padding: EdgeInsets.only(
-              top: deviceSize.height * 0.175,
-            )),
-            ScaleTransition(
-              scale: Tween(begin: .4, end: 1.0).animate(CurvedAnimation(
-                  curve: Curves.decelerate,
-                  parent: _audiencetargeting3controller)),
-              child: OutlineButton(
-                borderSide: BorderSide(
-                  color: Colors.white, //Color of the border
-                  style: BorderStyle.solid, //Style of the border
-                  width: deviceSize.width / 150, //width of the border
-                ),
-                highlightElevation: 3,
-                padding: EdgeInsets.fromLTRB(
-                    deviceSize.width * 0.12,
-                    deviceSize.height * 0.025,
-                    deviceSize.width * 0.12,
-                    deviceSize.height * 0.025),
-                disabledBorderColor: Colors.white,
-                highlightedBorderColor: Colors.white,
-                splashColor: Colors.blueAccent,
-                highlightColor: Colors.blue,
-                color: Color.fromRGBO(66, 134, 244, 1),
-                child: Text(
-                  "Usernames to Target",
-                  style: TextStyle(
-                      letterSpacing: 0.8,
-                      color: Colors.white,
-                      fontSize: deviceSize.width * 0.05,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'AvenirNext'),
-                ),
-                onPressed: () {
-                  HapticFeedback.vibrate();
-                  /*Navigator.of(context, rootNavigator: false).push(
-                    CupertinoPageRoute<bool>(
-                      fullscreenDialog: false,
-                      builder: (BuildContext context) => UsernameTargetPage(),
-                    ),
-                  );*/
-                },
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-              ),
-            ),
-            Padding(
-                padding: EdgeInsets.only(
-              top: deviceSize.height * 0.08,
-            )),
-            ScaleTransition(
-              scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
-                  curve: Curves.decelerate,
-                  parent: _audiencetargeting4controller)),
-              child: Container(
-                child: OutlineButton(
-                  borderSide: BorderSide(
-                    color: Colors.white, //Color of the border
-                    style: BorderStyle.solid, //Style of the border
-                    width: deviceSize.width / 150, //width of the border
-                  ),
-                  highlightElevation: 3,
-                  padding: EdgeInsets.fromLTRB(
-                      deviceSize.width * 0.125,
-                      deviceSize.height * 0.024,
-                      deviceSize.width * 0.125,
-                      deviceSize.height * 0.024),
-                  disabledBorderColor: Colors.white,
-                  highlightedBorderColor: Colors.white,
-                  splashColor: Colors.blueAccent,
-                  highlightColor: Colors.blue,
-                  color: Color.fromRGBO(66, 134, 244, 1),
-                  child: Text(
-                    "Hashtags to Target",
-                    style: TextStyle(
-                        letterSpacing: 1.5,
-                        color: Colors.white,
-                        fontSize: deviceSize.width * 0.051,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'AvenirNext'),
-                  ),
-                  onPressed: () {
-                    HapticFeedback.vibrate();
-                    /*Navigator.of(context, rootNavigator: false).push(
-                      CupertinoPageRoute<bool>(
-                        fullscreenDialog: false,
-                        builder: (BuildContext context) => HashtagTargetPage(),
-                      ),
-                    );*/
-                  },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25)),
-                ),
-              ),
-            ),
+            Text(
+              "Manual Selection",
+              style: TextStyle(color: Colors.white),
+            )
           ],
         ),
       ),
@@ -716,7 +706,7 @@ class _SupportPage extends State<SupportPage> with TickerProviderStateMixin {
                       width: deviceSize.width * 0.88,
                       child: Container(
                           child: Text(
-                        "Manager Page",
+                        "Support Page",
                         style: TextStyle(
                             letterSpacing: 1,
                             color: Colors.white,
