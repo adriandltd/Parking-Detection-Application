@@ -193,7 +193,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
               ],
             ),
           ),
-          height: deviceSize.width * 9.5,
+          height: deviceSize.width * 5.5,
           width: deviceSize.width,
           alignment: Alignment.center,
           child: Row(

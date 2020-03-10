@@ -26,18 +26,18 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
   determineScaleFactor() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 10.5;
+      return 5.0;
     else if (deviceSize.height > 800)
-      return 11.5;
+      return 6.0;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 12.0;
+      return 6.5;
     else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 13.0;
+      return 7.5;
     else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 13.5;
+      return 8.0;
     else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 14.0;
-    else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
+      return 8.5;
+    else if (deviceSize.height > 300 && deviceSize.height < 400) return 4.5;
   }
 
   determineScaleFactor2() {
@@ -96,112 +96,89 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
     switch (page) {
       case 0:
         setState(() {
-          body = _weeklyreports(deviceSize);
+          body = _findmeparking(deviceSize);
         });
         break;
       case 1:
         setState(() {
-          body = _audiencetargeting(deviceSize);
+          body = _manualselection(deviceSize);
         });
         break;
       case 2:
         setState(() {
-          body = _contentschedule(deviceSize);
+          body = _support(deviceSize);
         });
         break;
       case 3:
         setState(() {
-          body = _contactmanager(deviceSize);
-        });
-        break;
-      case 4:
-        setState(() {
           body = _settings(deviceSize);
         });
         break;
-      case 5:
+      case 4:
         setState(() {
           body = _about(deviceSize);
         });
         break;
       default:
         setState(() {
-          body = _weeklyreports(deviceSize);
+          body = _findmeparking(deviceSize);
         });
     }
   }
 
-  Widget _weeklyreports(deviceSize) {
+  Widget _findmeparking(deviceSize) {
     //getUserInfo();
     return Scaffold(
       key: _key,
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+          backgroundColor: Colors.black,
           primary: true,
           elevation: 0,
           title: Image.asset(
-            'assets/komi social white.png',
+            'assets/findmeparkinglogo.png',
             scale: determineScaleFactor(),
           )),
       drawer: _drawer(deviceSize),
-      body: WeeklyPage(),
+      body: FindMeParkingPage(),
     );
   }
 
-  Widget _audiencetargeting(deviceSize) {
+  Widget _manualselection(deviceSize) {
     return Scaffold(
       key: _key,
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+        backgroundColor: Colors.black,
         primary: true,
         elevation: 0,
         title: Image.asset(
-          'assets/komi social white.png',
+          'assets/findmeparkinglogo.png',
           scale: determineScaleFactor(),
         ),
       ),
       drawer: _drawer(deviceSize),
-      body: AudiencePage(),
+      body: ManualSelectionPage(),
     );
   }
 
-  Widget _contentschedule(deviceSize) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Color.fromRGBO(66, 134, 244, 1),
-        primary: true,
-        elevation: 0,
-        title: Image.asset(
-          'assets/komi social white.png',
-          scale: determineScaleFactor(),
-        ),
-      ),
-      drawer: _drawer(deviceSize),
-      backgroundColor: Color.fromRGBO(66, 134, 244, 1),
-      body: ContentPage(),
-    );
-  }
-
-  Widget _contactmanager(deviceSize) {
+  Widget _support(deviceSize) {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+          backgroundColor: Colors.black,
           primary: true,
           elevation: 0,
           title: Image.asset(
-            'assets/komi social white.png',
+            'assets/findmeparkinglogo.png',
             scale: determineScaleFactor(),
           ),
         ),
         drawer: _drawer(deviceSize),
-        body: ManagerPage());
+        body: SupportPage());
   }
 
   Widget _settings(deviceSize) {
@@ -209,11 +186,11 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+        backgroundColor: Colors.black,
         primary: true,
         elevation: 0,
         title: Image.asset(
-          'assets/komi social white.png',
+          'assets/findmeparkinglogo.png',
           scale: determineScaleFactor(),
         ),
       ),
@@ -229,11 +206,11 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(66, 134, 244, 1),
+        backgroundColor: Colors.black,
         primary: true,
         elevation: 0,
         title: Image.asset(
-          'assets/komi social white.png',
+          'assets/findmeparkinglogo.png',
           scale: determineScaleFactor(),
         ),
       ),
@@ -246,16 +223,14 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
     return Drawer(
       child: Container(
         decoration: BoxDecoration(
-          gradient: RadialGradient(
-            radius: 1.6,
-            center: Alignment.center,
-            stops: [.33, .66, .99],
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            stops: [.33, .75, 1],
             colors: [
-              // Color.fromRGBO(255, 212, 109, 1),
-              // Color.fromRGBO(255, 200, 70, 1),
-              Color.fromRGBO(76, 158, 244, 1),
-              Color.fromRGBO(68, 140, 244, 1),
-              Color.fromRGBO(62, 130, 244, 1),
+              Color.fromRGBO(255, 112, 0, 1),
+              Color.fromRGBO(255, 150, 0, 1),
+              Color.fromRGBO(255, 160, 0, 1),
             ],
           ),
         ),
@@ -263,17 +238,28 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: deviceSize.width * 0.1)),
+            Padding(padding: EdgeInsets.only(top: deviceSize.width * 0.125)),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(
+                  'assets/utrgv-logo.png',
+                  scale: determineScaleFactor2(),
+                ),
+              ],
+            ),
+            Padding(padding: EdgeInsets.only(top: deviceSize.width * 0.05)),
             Divider(
               color: Colors.grey[300],
             ),
             ListTile(
               leading: Icon(
-                Icons.calendar_today,
+                Icons.drive_eta,
                 color: Colors.grey[200],
               ),
               title: Text(
-                'Weekly Reports',
+                'Find Me Parking',
                 style: TextStyle(
                     height: 1,
                     color: Colors.grey[100],
@@ -292,11 +278,11 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
             ),
             ListTile(
               leading: Icon(
-                Icons.people,
+                Icons.location_on,
                 color: Colors.grey[200],
               ),
               title: Text(
-                'Audience Targeting',
+                'Manual Selection',
                 style: TextStyle(
                     height: 1,
                     color: Colors.grey[100],
@@ -313,13 +299,16 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
                 });
               },
             ),
+            Divider(
+              color: Colors.grey[300],
+            ),
             ListTile(
               leading: Icon(
-                Icons.schedule,
+                Icons.security,
                 color: Colors.grey[200],
               ),
               title: Text(
-                'Content Scheduling & Posting',
+                'Support',
                 style: TextStyle(
                     height: 1,
                     color: Colors.grey[100],
@@ -331,29 +320,6 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
                 HapticFeedback.vibrate();
                 setState(() {
                   page = 2;
-                  determinePage(deviceSize);
-                  Navigator.pop(context);
-                });
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.person,
-                color: Colors.grey[200],
-              ),
-              title: Text(
-                'Contact Your Manager',
-                style: TextStyle(
-                    height: 1,
-                    color: Colors.grey[100],
-                    fontSize: deviceSize.width * 0.041,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'AvenirNext'),
-              ),
-              onTap: () {
-                HapticFeedback.vibrate();
-                setState(() {
-                  page = 3;
                   determinePage(deviceSize);
                   Navigator.pop(context);
                 });
@@ -379,7 +345,7 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
               onTap: () {
                 HapticFeedback.vibrate();
                 setState(() {
-                  page = 4;
+                  page = 3;
                   determinePage(deviceSize);
                   Navigator.pop(context);
                 });
@@ -402,7 +368,7 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
               onTap: () {
                 HapticFeedback.vibrate();
                 setState(() {
-                  page = 5;
+                  page = 4;
                   determinePage(deviceSize);
                   Navigator.pop(context);
                 });
@@ -415,18 +381,19 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
   }
 }
 
-class WeeklyPage extends StatefulWidget {
-  WeeklyPage();
+class FindMeParkingPage extends StatefulWidget {
+  FindMeParkingPage();
   @override
-  _WeeklyPage createState() {
-    return new _WeeklyPage();
+  _FindMeParkingPage createState() {
+    return new _FindMeParkingPage();
   }
 }
 
-class _WeeklyPage extends State<WeeklyPage> with TickerProviderStateMixin {
+class _FindMeParkingPage extends State<FindMeParkingPage>
+    with TickerProviderStateMixin {
   AnimationController _sidebarcontroller;
 
-  _WeeklyPage();
+  _FindMeParkingPage();
   @override
   void initState() {
     setState(() {});
@@ -457,17 +424,14 @@ class _WeeklyPage extends State<WeeklyPage> with TickerProviderStateMixin {
     var deviceSize = MediaQuery.of(context).size;
     return Container(
         decoration: BoxDecoration(
-          gradient: RadialGradient(
-            radius: 1.5,
-            center: Alignment.bottomCenter,
-            stops: [.25, .45, .85, 1],
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            stops: [.33, .66, 1],
             colors: [
-              // Color.fromRGBO(255, 212, 109, 1),
-              // Color.fromRGBO(255, 200, 70, 1),
-              Color.fromRGBO(84, 164, 244, 1),
-              Color.fromRGBO(78, 158, 244, 1),
-              Color.fromRGBO(68, 140, 244, 1),
-              Color.fromRGBO(66, 134, 244, 1),
+              Color.fromRGBO(30, 30, 30, 1),
+              Color.fromRGBO(20, 20, 20, 1),
+              Color.fromRGBO(0, 0, 0, 1),
             ],
           ),
         ),
@@ -493,15 +457,16 @@ class _WeeklyPage extends State<WeeklyPage> with TickerProviderStateMixin {
   }
 }
 
-class AudiencePage extends StatefulWidget {
-  AudiencePage();
+class ManualSelectionPage extends StatefulWidget {
+  ManualSelectionPage();
   @override
-  _AudiencePage createState() {
-    return new _AudiencePage();
+  _ManualSelectionPage createState() {
+    return new _ManualSelectionPage();
   }
 }
 
-class _AudiencePage extends State<AudiencePage> with TickerProviderStateMixin {
+class _ManualSelectionPage extends State<ManualSelectionPage>
+    with TickerProviderStateMixin {
   AnimationController _audiencetargeting1controller;
   AnimationController _audiencetargeting2controller;
   AnimationController _audiencetargeting3controller;
@@ -538,15 +503,14 @@ class _AudiencePage extends State<AudiencePage> with TickerProviderStateMixin {
     var deviceSize = MediaQuery.of(context).size;
     return Container(
       decoration: BoxDecoration(
-        gradient: RadialGradient(
-          radius: 1.5,
-          center: Alignment.bottomCenter,
-          stops: [.25, .45, .85, 1],
+        gradient: LinearGradient(
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          stops: [.33, .66, 1],
           colors: [
-            Color.fromRGBO(84, 164, 244, 1),
-            Color.fromRGBO(78, 158, 244, 1),
-            Color.fromRGBO(68, 140, 244, 1),
-            Color.fromRGBO(66, 134, 244, 1),
+            Color.fromRGBO(30, 30, 30, 1),
+            Color.fromRGBO(20, 20, 20, 1),
+            Color.fromRGBO(0, 0, 0, 1),
           ],
         ),
       ),
@@ -684,445 +648,15 @@ class _AudiencePage extends State<AudiencePage> with TickerProviderStateMixin {
   }
 }
 
-class ContentPage extends StatefulWidget {
-  ContentPage();
+class SupportPage extends StatefulWidget {
+  SupportPage();
   @override
-  _ContentPage createState() {
-    return new _ContentPage();
+  _SupportPage createState() {
+    return new _SupportPage();
   }
 }
 
-class _ContentPage extends State<ContentPage> with TickerProviderStateMixin {
-  determineScaleFactor() {
-    var deviceSize = MediaQuery.of(context).size;
-    if (deviceSize.height > 900)
-      return 9.5;
-    else if (deviceSize.height > 800)
-      return 10.5;
-    else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 11.0;
-    else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 12.0;
-    else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 13.5;
-    else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 14.0;
-    else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
-  }
-
-  AnimationController _comingsoon1controller;
-  AnimationController _comingsoon2controller;
-  AnimationController _comingsoon3controller;
-  AnimationController _comingsoon4controller;
-  AnimationController _comingsoon5controller;
-  AnimationController _comingsoon6controller;
-  AnimationController _comingsoon7controller;
-  Animation<Offset> _comingsoonoffsetFloat;
-
-  AnimationController _settingsanimationController;
-
-  bool signedup;
-
-  submitinfoFirebase() async {
-    FirebaseAuth.instance.currentUser().then((user) {
-      Firestore.instance.collection('cards').document(user.uid).setData({
-        'Signed Up For Content': true,
-      }, merge: true);
-    });
-    showDialog<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            titlePadding: EdgeInsets.only(top: 35, left: 10, right: 10),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(15.0))),
-            title: const Text(
-              'You will be notified when our Content Scheduling feature is released.',
-              style: TextStyle(
-                  letterSpacing: 1.1,
-                  height: 1.1,
-                  fontSize: 22,
-                  fontFamily: 'AvenirNext',
-                  fontWeight: FontWeight.w400),
-              textAlign: TextAlign.center,
-            ),
-            actions: <Widget>[
-              FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                color: Color.fromRGBO(66, 134, 244, 1),
-                child: Text('Ok',
-                    style: TextStyle(
-                        letterSpacing: 1.1,
-                        fontSize: 14,
-                        color: Colors.white,
-                        fontFamily: 'AvenirNext',
-                        fontWeight: FontWeight.w400)),
-                onPressed: () {
-                  HapticFeedback.vibrate();
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        });
-  }
-
-  @override
-  void initState() {
-    setState(() {});
-    super.initState();
-
-    _comingsoon1controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 385));
-    _comingsoon1controller.forward();
-
-    _comingsoonoffsetFloat =
-        Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset.zero)
-            .animate(_comingsoon1controller);
-
-    //Coming Soon Animation Controllers
-
-    _comingsoon1controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 385));
-    _comingsoon1controller.forward();
-
-    _comingsoonoffsetFloat =
-        Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset.zero)
-            .animate(_comingsoon1controller);
-
-    _comingsoon1controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
-    _comingsoon1controller.forward();
-
-    _comingsoon2controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
-    _comingsoon2controller.forward();
-
-    _comingsoon4controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 550));
-    _comingsoon4controller.forward();
-
-    _comingsoon5controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 650));
-    _comingsoon5controller.forward();
-
-    _comingsoon6controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
-    _comingsoon6controller.forward();
-
-    _comingsoon3controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 750));
-    _comingsoon3controller.forward();
-
-    _comingsoon7controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1450));
-    _comingsoon7controller.forward();
-    _comingsoonoffsetFloat =
-        Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset.zero)
-            .animate(_comingsoon1controller);
-    _settingsanimationController = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 500),
-      lowerBound: 0.0,
-      upperBound: 0.09,
-    );
-    _settingsanimationController.addListener(() {
-      setState(() {});
-    });
-  }
-
-  void _onTapDown(TapDownDetails details) {
-    HapticFeedback.lightImpact();
-    _settingsanimationController.forward();
-  }
-
-  void _onTapUp() {
-    _settingsanimationController.reverse();
-  }
-
-  void _onTapUp2(TapUpDetails details) {
-    HapticFeedback.mediumImpact();
-    _settingsanimationController.reverse();
-    Future.delayed(const Duration(milliseconds: 1700), () async {
-      setState(() async {
-        submitinfoFirebase();
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    double scale = 1 - _settingsanimationController.value;
-    var deviceSize = MediaQuery.of(context).size;
-    return Container(
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            radius: 1.5,
-            center: Alignment.bottomCenter,
-            stops: [.25, .45, .85, 1],
-            colors: [
-              Color.fromRGBO(84, 164, 244, 1),
-              Color.fromRGBO(78, 158, 244, 1),
-              Color.fromRGBO(68, 140, 244, 1),
-              Color.fromRGBO(66, 134, 244, 1),
-            ],
-          ),
-        ),
-        height: deviceSize.height,
-        width: deviceSize.width,
-        child: SlideTransition(
-            position: _comingsoonoffsetFloat,
-            child: ScaleTransition(
-                scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                    curve: Curves.decelerate, parent: _comingsoon1controller)),
-                child: Center(
-                  child: Container(
-                    width: deviceSize.width * 0.9,
-                    child: ListView(
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            ScaleTransition(
-                              scale: Tween(begin: .65, end: 1.0).animate(
-                                  CurvedAnimation(
-                                      curve: Curves.decelerate,
-                                      parent: _comingsoon2controller)),
-                              child: Text(
-                                "Are you interested in having your manager schedule & post your content?",
-                                style: TextStyle(
-                                    height: 1.35,
-                                    color: Colors.white,
-                                    fontSize: deviceSize.width * 0.065,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily: 'AvenirNext'),
-                                textAlign: TextAlign.center,
-                              ),
-                            )
-                          ],
-                        ),
-                        Padding(
-                            padding: EdgeInsets.only(
-                          top: deviceSize.height * 0.075,
-                        )),
-                        ScaleTransition(
-                          scale: Tween(begin: .65, end: 1.0).animate(
-                              CurvedAnimation(
-                                  curve: Curves.decelerate,
-                                  parent: _comingsoon3controller)),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  width: deviceSize.width * 0.9,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white,
-                                          width: deviceSize.width / 175),
-                                      borderRadius: BorderRadius.circular(25)),
-                                  child: Column(children: <Widget>[
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                      top: deviceSize.height * 0.01,
-                                    )),
-                                    ScaleTransition(
-                                      scale: Tween(begin: .55, end: 1.0)
-                                          .animate(CurvedAnimation(
-                                              curve: Curves.decelerate,
-                                              parent: _comingsoon4controller)),
-                                      child: Image.asset(
-                                          'assets/komi logo april 2019.png',
-                                          scale: determineScaleFactor(),
-                                          alignment: Alignment.bottomLeft),
-                                    ),
-                                    ScaleTransition(
-                                      scale: Tween(begin: .5, end: 1.0).animate(
-                                          CurvedAnimation(
-                                              curve: Curves.decelerate,
-                                              parent: _comingsoon5controller)),
-                                      child: Text(
-                                        "Up to 30 posts a month.",
-                                        style: TextStyle(
-                                            letterSpacing: 1.45,
-                                            height: 1.5,
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: deviceSize.width * 0.065,
-                                            color: Colors.white,
-                                            fontFamily: 'AvenirNext'),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                      top: deviceSize.height * 0.025,
-                                    )),
-                                    ScaleTransition(
-                                      scale: Tween(begin: .45, end: 1.0)
-                                          .animate(CurvedAnimation(
-                                              curve: Curves.decelerate,
-                                              parent: _comingsoon6controller)),
-                                      child: Text(
-                                        "• Upload Your Content & Captions\n• Schedule Your Posts in Advance with Your Manager\n• Your Manager Will Post On Your Behalf",
-                                        style: TextStyle(
-                                            height: 2,
-                                            fontSize: deviceSize.width * 0.032,
-                                            color: Colors.white,
-                                            fontFamily: 'AvenirNext'),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                      top: deviceSize.width * 0.15,
-                                    )),
-                                    ScaleTransition(
-                                        scale: Tween(begin: .4, end: 1.0)
-                                            .animate(CurvedAnimation(
-                                                curve: Curves.bounceOut,
-                                                parent:
-                                                    _comingsoon7controller)),
-                                        child: StreamBuilder<Object>(
-                                            stream: null,
-                                            builder: (context, snapshot) {
-                                              if (signedup == null) {
-                                                return Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: <Widget>[
-                                                    Align(
-                                                      alignment:
-                                                          Alignment.centerRight,
-                                                      child: SizedBox(
-                                                        width: 40,
-                                                        height: 40,
-                                                        child: SizedBox(
-                                                            width: 25,
-                                                            height: 25,
-                                                            child:
-                                                                const CircularProgressIndicator(
-                                                              strokeWidth: 3,
-                                                              valueColor:
-                                                                  AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                      Colors
-                                                                          .white),
-                                                            )),
-                                                      ),
-                                                    )
-                                                  ],
-                                                );
-                                              } else if (signedup == false) {
-                                                return Container(
-                                                  child: Center(
-                                                    child: GestureDetector(
-                                                      onTapCancel: _onTapUp,
-                                                      onTapUp: _onTapUp2,
-                                                      onTapDown: _onTapDown,
-                                                      child: Transform.scale(
-                                                        scale: scale,
-                                                        child: Container(
-                                                          width:
-                                                              deviceSize.width *
-                                                                  0.75,
-                                                          height:
-                                                              deviceSize.width *
-                                                                  0.15,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Colors.green,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        38.0),
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                color: Colors
-                                                                    .black26,
-                                                                offset: Offset(
-                                                                    0.0, 2.0),
-                                                                blurRadius: 5.0,
-                                                                spreadRadius:
-                                                                    0.25,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          child: Text(
-                                                            'Sign Me Up!',
-                                                            style: TextStyle(
-                                                                letterSpacing:
-                                                                    1,
-                                                                color: Colors
-                                                                    .white,
-                                                                fontSize: deviceSize
-                                                                        .height *
-                                                                    0.025,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                fontFamily:
-                                                                    'AvenirNext'),
-                                                          ),
-                                                          alignment:
-                                                              Alignment.center,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              } else {
-                                                return Container(
-                                                  child: Center(
-                                                    child: Text(
-                                                      '<Already Signed Up>',
-                                                      style: TextStyle(
-                                                          letterSpacing: 1,
-                                                          color: Colors.white,
-                                                          fontSize: deviceSize
-                                                                  .height *
-                                                              0.025,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontFamily:
-                                                              'AvenirNext'),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                            })),
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                      top: deviceSize.width * 0.065,
-                                    )),
-                                  ])),
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                top: deviceSize.width * 0.055,
-                              )),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                            padding: EdgeInsets.only(
-                          top: deviceSize.width * 0.025,
-                        )),
-                      ],
-                    ),
-                  ),
-                ))));
-  }
-}
-
-class ManagerPage extends StatefulWidget {
-  ManagerPage();
-  @override
-  _ManagerPage createState() {
-    return new _ManagerPage();
-  }
-}
-
-class _ManagerPage extends State<ManagerPage> with TickerProviderStateMixin {
+class _SupportPage extends State<SupportPage> with TickerProviderStateMixin {
   determineScaleFactor() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
@@ -1161,15 +695,14 @@ class _ManagerPage extends State<ManagerPage> with TickerProviderStateMixin {
     var deviceSize = MediaQuery.of(context).size;
     return Container(
         decoration: BoxDecoration(
-          gradient: RadialGradient(
-            radius: 1.5,
-            center: Alignment.bottomCenter,
-            stops: [.25, .45, .85, 1],
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            stops: [.33, .66, 1],
             colors: [
-              Color.fromRGBO(84, 164, 244, 1),
-              Color.fromRGBO(78, 158, 244, 1),
-              Color.fromRGBO(68, 140, 244, 1),
-              Color.fromRGBO(66, 134, 244, 1),
+              Color.fromRGBO(30, 30, 30, 1),
+              Color.fromRGBO(20, 20, 20, 1),
+              Color.fromRGBO(0, 0, 0, 1),
             ],
           ),
         ),
@@ -1336,15 +869,14 @@ class _SettingsPage extends State<SettingsPage> with TickerProviderStateMixin {
         child: Center(
             child: Container(
                 decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                    radius: 1.5,
-                    center: Alignment.bottomCenter,
-                    stops: [.25, .45, .85, 1],
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    stops: [.33, .66, 1],
                     colors: [
-                      Color.fromRGBO(84, 164, 244, 1),
-                      Color.fromRGBO(78, 158, 244, 1),
-                      Color.fromRGBO(68, 140, 244, 1),
-                      Color.fromRGBO(66, 134, 244, 1),
+                      Color.fromRGBO(30, 30, 30, 1),
+                      Color.fromRGBO(20, 20, 20, 1),
+                      Color.fromRGBO(0, 0, 0, 1),
                     ],
                   ),
                 ),
@@ -1481,17 +1013,14 @@ class _AboutPage extends State<AboutPage> with TickerProviderStateMixin {
         child: Center(
             child: Container(
                 decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                    radius: 1.5,
-                    center: Alignment.bottomCenter,
-                    stops: [.25, .45, .85, 1],
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    stops: [.33, .66, 1],
                     colors: [
-                      // Color.fromRGBO(255, 212, 109, 1),
-                      // Color.fromRGBO(255, 200, 70, 1),
-                      Color.fromRGBO(84, 164, 244, 1),
-                      Color.fromRGBO(78, 158, 244, 1),
-                      Color.fromRGBO(68, 140, 244, 1),
-                      Color.fromRGBO(66, 134, 244, 1),
+                      Color.fromRGBO(30, 30, 30, 1),
+                      Color.fromRGBO(20, 20, 20, 1),
+                      Color.fromRGBO(0, 0, 0, 1),
                     ],
                   ),
                 ),
