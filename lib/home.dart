@@ -525,9 +525,9 @@ class _FindMeParkingPage extends State<FindMeParkingPage>
                   ),
                   highlightElevation: 3,
                   padding: EdgeInsets.fromLTRB(
-                      deviceSize.width * 0.125,
+                      deviceSize.width * 0.195,
                       deviceSize.height * 0.024,
-                      deviceSize.width * 0.125,
+                      deviceSize.width * 0.195,
                       deviceSize.height * 0.024),
                   disabledBorderColor: Colors.white,
                   highlightedBorderColor: Colors.white,

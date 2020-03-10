@@ -66,13 +66,13 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
       decoration: BoxDecoration(
         gradient: RadialGradient(
           radius: .75,
-            center: Alignment.center,
-            stops: [.25, .45, .85, 1],
-            colors: [
-              Color.fromRGBO(255, 160, 0, 1),
-              Color.fromRGBO(255, 140, 0, 1),
-              Color.fromRGBO(255, 120, 0, 1),
-              Color.fromRGBO(255, 112, 0, 1),
+          center: Alignment.center,
+          stops: [.25, .45, .85, 1],
+          colors: [
+            Color.fromRGBO(255, 160, 0, 1),
+            Color.fromRGBO(255, 140, 0, 1),
+            Color.fromRGBO(255, 120, 0, 1),
+            Color.fromRGBO(255, 112, 0, 1),
           ],
         ),
       ),
@@ -121,7 +121,8 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                      curve: Curves.decelerate, parent: _signupscalecontroller)),
+                      curve: Curves.decelerate,
+                      parent: _signupscalecontroller)),
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
@@ -355,53 +356,43 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: deviceSize.height * 0.055)),
+                Padding(
+                    padding: EdgeInsets.only(top: deviceSize.height * 0.055)),
                 ScaleTransition(
                   scale: Tween(begin: .15, end: 1.0).animate(CurvedAnimation(
                       curve: Curves.decelerate,
                       parent: _continuescalecontroller)),
-                  child: FlatButton(
-                    color: Colors.white12,
+                  child: OutlineButton(
+                    borderSide: BorderSide(
+                      color: Colors.white, //Color of the border
+                      style: BorderStyle.solid, //Style of the border
+                      width: deviceSize.width / 250, //width of the border
+                    ),
+                    highlightElevation: 3,
                     padding: EdgeInsets.fromLTRB(
-                        deviceSize.width * 0.001,
-                        deviceSize.height * 0.001,
-                        deviceSize.width * 0.001,
-                        deviceSize.height * 0.001),
+                        deviceSize.width * 0.31,
+                        deviceSize.height * 0.023,
+                        deviceSize.width * 0.31,
+                        deviceSize.height * 0.023),
+                    disabledBorderColor: Colors.white,
+                    highlightedBorderColor: Colors.white,
+                    splashColor: Colors.green,
+                    highlightColor: Colors.green,
+                    color: Colors.green,
+                    child: Text(
+                      "Submit",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: deviceSize.height * 0.022,
+                          fontWeight: FontWeight.w300,
+                          fontFamily: 'AvenirNext'),
+                    ),
+                    onPressed: () async {
+                      HapticFeedback.vibrate();
+                      signUpWithEmail(context);
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
-                    onPressed: () => {},
-                    child: OutlineButton(
-                      borderSide: BorderSide(
-                        color: Colors.white, //Color of the border
-                        style: BorderStyle.solid, //Style of the border
-                        width: deviceSize.width / 250, //width of the border
-                      ),
-                      highlightElevation: 3,
-                      padding: EdgeInsets.fromLTRB(
-                          deviceSize.width * 0.31,
-                          deviceSize.height * 0.023,
-                          deviceSize.width * 0.31,
-                          deviceSize.height * 0.023),
-                      disabledBorderColor: Colors.white,
-                      highlightedBorderColor: Colors.white,
-                      splashColor: Colors.green,
-                      highlightColor: Colors.green,
-                      color: Colors.green,
-                      child: Text(
-                        "Submit",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: deviceSize.height * 0.022,
-                            fontWeight: FontWeight.w300,
-                            fontFamily: 'AvenirNext'),
-                      ),
-                      onPressed: () async {
-                        HapticFeedback.vibrate();
-                        signUpWithEmail(context);
-                      },
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                    ),
                   ),
                 ),
                 Padding(
@@ -830,12 +821,12 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
         AnimationController(vsync: this, duration: Duration(milliseconds: 650));
     _listscalecontroller.forward();
 
-    _logogscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 400));
+    _logogscalecontroller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 400));
     _logogscalecontroller.forward();
 
-    _signupscalecontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 425));
+    _signupscalecontroller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 425));
     _signupscalecontroller.forward();
 
     _fnamescalecontroller =
