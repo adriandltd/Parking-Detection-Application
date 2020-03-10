@@ -393,8 +393,8 @@ class _MyLoginPageState extends State<MyStartUpPage>
           center: Alignment.center,
           stops: [.25, .4, 1],
           colors: [
-            Color.fromRGBO(30, 30, 30, 1),
             Color.fromRGBO(20, 20, 20, 1),
+            Color.fromRGBO(15, 15, 15, 1),
             Color.fromRGBO(0, 0, 0, 1),
             /*Color.fromRGBO(255, 170, 0, 1),
             Color.fromRGBO(255, 150, 0, 1),
@@ -413,13 +413,19 @@ class _MyLoginPageState extends State<MyStartUpPage>
                 children: <Widget>[
                   Padding(
                       padding: EdgeInsets.only(
-                    top: deviceSize.width * 0.25,
+                    top: deviceSize.width * 0.2,
                   )),
                   ScaleTransition(
                     child: Center(
-                      child: Image.asset('assets/findmeparkinglogo.png',
-                          scale: determineScaleFactorFindMeParking(),
-                          alignment: Alignment.topCenter),
+                      child: Text(
+                        "Find Me Parking",
+                        style: TextStyle(
+                            letterSpacing: 2.0,
+                            color: Colors.white,
+                            fontSize: deviceSize.height * 0.04,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'AvenirNext'),
+                      ),
                     ),
                     scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
                         curve: Curves.bounceOut,
@@ -441,7 +447,7 @@ class _MyLoginPageState extends State<MyStartUpPage>
                   ),
                   Padding(
                       padding: EdgeInsets.only(
-                    top: deviceSize.width * 0.15,
+                    top: deviceSize.width * 0.225,
                   )),
                   ScaleTransition(
                     child: Container(

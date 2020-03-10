@@ -65,7 +65,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
     return Container(
       decoration: BoxDecoration(
         gradient: RadialGradient(
-          radius: .75,
+          radius: 1.25,
           center: Alignment.center,
           stops: [.25, .45, .85, 1],
           colors: [
@@ -117,7 +117,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.height * 0.04,
+                  top: deviceSize.height * 0.05,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
@@ -137,7 +137,7 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                  top: deviceSize.width * 0.075,
+                  top: deviceSize.width * 0.05,
                 )),
                 ScaleTransition(
                   scale: Tween(begin: .65, end: 1.0).animate(CurvedAnimation(
