@@ -378,9 +378,9 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
                       ),
                       highlightElevation: 3,
                       padding: EdgeInsets.fromLTRB(
-                          deviceSize.width * 0.325,
+                          deviceSize.width * 0.31,
                           deviceSize.height * 0.023,
-                          deviceSize.width * 0.325,
+                          deviceSize.width * 0.31,
                           deviceSize.height * 0.023),
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,

@@ -193,9 +193,9 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
                       ),
                       highlightElevation: 3,
                       padding: EdgeInsets.fromLTRB(
-                          deviceSize.width * 0.3425,
+                          deviceSize.width * 0.33,
                           deviceSize.height * 0.023,
-                          deviceSize.width * 0.3425,
+                          deviceSize.width * 0.33,
                           deviceSize.height * 0.023),
                       disabledBorderColor: Colors.white,
                       highlightedBorderColor: Colors.white,

@@ -555,9 +555,9 @@ class _MyLoginPageState extends State<MyStartUpPage>
                           ),
                           highlightElevation: 3,
                           padding: EdgeInsets.fromLTRB(
-                              deviceSize.width * 0.33,
+                              deviceSize.width * 0.325,
                               deviceSize.height * 0.023,
-                              deviceSize.width * 0.33,
+                              deviceSize.width * 0.325,
                               deviceSize.height * 0.023),
                           disabledBorderColor: Colors.white,
                           highlightedBorderColor: Colors.white,
