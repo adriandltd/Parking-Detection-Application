@@ -130,14 +130,20 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
       key: _key,
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.black,
-          primary: true,
-          elevation: 0,
-          title: Image.asset(
-            'assets/findmeparkinglogo.png',
-            scale: determineScaleFactor(),
-          )),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+        primary: true,
+        elevation: 0,
+        title: Text(
+          "Find Me Parking",
+          style: TextStyle(
+              letterSpacing: 1,
+              color: Colors.white,
+              fontSize: deviceSize.width * 0.06,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'AvenirNext'),
+        ),
+      ),
       drawer: _drawer(deviceSize),
       body: FindMeParkingPage(),
     );
@@ -152,9 +158,14 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
         backgroundColor: Colors.black,
         primary: true,
         elevation: 0,
-        title: Image.asset(
-          'assets/findmeparkinglogo.png',
-          scale: determineScaleFactor(),
+        title: Text(
+          "Manual Selection",
+          style: TextStyle(
+              letterSpacing: 1,
+              color: Colors.white,
+              fontSize: deviceSize.width * 0.06,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'AvenirNext'),
         ),
       ),
       drawer: _drawer(deviceSize),
@@ -170,9 +181,14 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
           backgroundColor: Colors.black,
           primary: true,
           elevation: 0,
-          title: Image.asset(
-            'assets/findmeparkinglogo.png',
-            scale: determineScaleFactor(),
+          title: Text(
+            "Support",
+            style: TextStyle(
+                letterSpacing: 1,
+                color: Colors.white,
+                fontSize: deviceSize.width * 0.06,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'AvenirNext'),
           ),
         ),
         drawer: _drawer(deviceSize),
@@ -187,9 +203,14 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
         backgroundColor: Colors.black,
         primary: true,
         elevation: 0,
-        title: Image.asset(
-          'assets/findmeparkinglogo.png',
-          scale: determineScaleFactor(),
+        title: Text(
+          "Settings",
+          style: TextStyle(
+              letterSpacing: 1,
+              color: Colors.white,
+              fontSize: deviceSize.width * 0.06,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'AvenirNext'),
         ),
       ),
       drawer: _drawer(deviceSize),
@@ -207,9 +228,14 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
         backgroundColor: Colors.black,
         primary: true,
         elevation: 0,
-        title: Image.asset(
-          'assets/findmeparkinglogo.png',
-          scale: determineScaleFactor(),
+        title: Text(
+          "About",
+          style: TextStyle(
+              letterSpacing: 1,
+              color: Colors.white,
+              fontSize: deviceSize.width * 0.06,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'AvenirNext'),
         ),
       ),
       drawer: _drawer(deviceSize),
@@ -236,11 +262,15 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: deviceSize.width * 0.125)),
+            Padding(padding: EdgeInsets.only(top: deviceSize.width * 0.14)),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                Padding(
+                    padding: EdgeInsets.only(
+                  left: deviceSize.width * 0.175,
+                )),
                 Image.asset(
                   'assets/utrgv-logo.png',
                   scale: determineScaleFactor2(),
@@ -297,9 +327,6 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
                 });
               },
             ),
-            Divider(
-              color: Colors.grey[300],
-            ),
             ListTile(
               leading: Icon(
                 Icons.security,
@@ -322,9 +349,6 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
                   Navigator.pop(context);
                 });
               },
-            ),
-            Divider(
-              color: Colors.grey[300],
             ),
             ListTile(
               leading: Icon(
@@ -878,20 +902,6 @@ class _SettingsPage extends State<SettingsPage> with TickerProviderStateMixin {
                             child: SizedBox(
                                 width: deviceSize.width * 0.88,
                                 child: ListView(children: <Widget>[
-                                  ScaleTransition(
-                                      scale: Tween(begin: .6, end: 1.0).animate(
-                                          CurvedAnimation(
-                                              curve: Curves.decelerate,
-                                              parent: _settings1controller)),
-                                      child: Text(
-                                        "Settings",
-                                        style: TextStyle(
-                                            letterSpacing: 1,
-                                            color: Colors.white,
-                                            fontSize: deviceSize.width * 0.08,
-                                            fontWeight: FontWeight.w500,
-                                            fontFamily: 'AvenirNext'),
-                                      )),
                                   Padding(
                                       padding: EdgeInsets.only(
                                     top: deviceSize.width * 0.1,

@@ -20,17 +20,17 @@ class _MyForgotPasswordPage extends State<MyForgotPasswordPage>
   determineScaleFactor() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 6.5;
-    else if (deviceSize.height > 800)
       return 7.5;
+    else if (deviceSize.height > 800)
+      return 8.5;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 8.0;
-    else if (deviceSize.height > 600 && deviceSize.height < 700)
       return 9.0;
-    else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 9.5;
-    else if (deviceSize.height > 400 && deviceSize.height < 500)
+    else if (deviceSize.height > 600 && deviceSize.height < 700)
       return 10.0;
+    else if (deviceSize.height > 500 && deviceSize.height < 600)
+      return 10.5;
+    else if (deviceSize.height > 400 && deviceSize.height < 500)
+      return 11.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 

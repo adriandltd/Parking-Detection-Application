@@ -120,17 +120,17 @@ class _MyLoginPageState extends State<MyStartUpPage>
   determineScaleFactorFindMeParking() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 3.0;
+      return 11.0;
     else if (deviceSize.height > 800)
-      return 4.0;
+      return 12.0;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 4.5;
+      return 12.5;
     else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 5.0;
+      return 13.0;
     else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 5.5;
+      return 13.5;
     else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 6.0;
+      return 14.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
@@ -389,12 +389,12 @@ class _MyLoginPageState extends State<MyStartUpPage>
     return Container(
       decoration: BoxDecoration(
         gradient: RadialGradient(
-          radius: 1.25,
-          center: Alignment.center,
-          stops: [.25, .4, 1],
+          radius: 2.5,
+          center: Alignment.topCenter,
+          stops: [.15, .4, 1],
           colors: [
+            Color.fromRGBO(30, 30, 30, 1),
             Color.fromRGBO(20, 20, 20, 1),
-            Color.fromRGBO(15, 15, 15, 1),
             Color.fromRGBO(0, 0, 0, 1),
             /*Color.fromRGBO(255, 170, 0, 1),
             Color.fromRGBO(255, 150, 0, 1),
@@ -413,41 +413,22 @@ class _MyLoginPageState extends State<MyStartUpPage>
                 children: <Widget>[
                   Padding(
                       padding: EdgeInsets.only(
-                    top: deviceSize.width * 0.2,
+                    top: deviceSize.width * 0.1,
                   )),
                   ScaleTransition(
                     child: Center(
-                      child: Text(
-                        "Find Me Parking",
-                        style: TextStyle(
-                            letterSpacing: 2.0,
-                            color: Colors.white,
-                            fontSize: deviceSize.height * 0.04,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'AvenirNext'),
-                      ),
+                      child: Image.asset('assets/findmeparkinglogo.png',
+                          scale: determineScaleFactorFindMeParking(),
+                          alignment: Alignment.topCenter),
                     ),
                     scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
                         curve: Curves.bounceOut,
                         parent: _findmeparkingcontroller)),
                   ),
+                  
                   Padding(
                       padding: EdgeInsets.only(
-                    top: deviceSize.width * 0.02,
-                  )),
-                  ScaleTransition(
-                    child: Center(
-                        child: Image.asset(
-                      'assets/utrgv-logo.png',
-                      scale: determineScaleFactorUTRGV(),
-                      alignment: Alignment.centerRight,
-                    )),
-                    scale: Tween(begin: .7, end: 1.0).animate(CurvedAnimation(
-                        curve: Curves.bounceOut, parent: _utrgvlogocontroller)),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(
-                    top: deviceSize.width * 0.225,
+                    top: deviceSize.width * 0.125,
                   )),
                   ScaleTransition(
                     child: Container(
@@ -682,7 +663,7 @@ class _MyLoginPageState extends State<MyStartUpPage>
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.only(top: deviceSize.height * 0.06)),
+                      padding: EdgeInsets.only(top: deviceSize.height * 0.09)),
                   Center(
                     child: GestureDetector(
                       onTap: () {

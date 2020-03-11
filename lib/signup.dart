@@ -65,15 +65,15 @@ class _MySignUpPage extends State<MySignUpPage> with TickerProviderStateMixin {
     return Container(
       decoration: BoxDecoration(
         gradient: RadialGradient(
-          radius: 1.25,
-          center: Alignment.center,
-          stops: [.25, .45, .85, 1],
-          colors: [
-            Color.fromRGBO(255, 160, 0, 1),
-            Color.fromRGBO(255, 140, 0, 1),
-            Color.fromRGBO(255, 120, 0, 1),
-            Color.fromRGBO(255, 112, 0, 1),
-          ],
+          radius: .62,
+            center: Alignment.center,
+            stops: [.25, .45, .85, 1],
+            colors: [
+              Color.fromRGBO(255, 160, 0, 1),
+              Color.fromRGBO(255, 140, 0, 1),
+              Color.fromRGBO(255, 120, 0, 1),
+              Color.fromRGBO(255, 112, 0, 1),
+            ],
         ),
       ),
       child: ScaleTransition(
