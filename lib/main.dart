@@ -275,10 +275,10 @@ class _MyLoginPageState extends State<MyStartUpPage>
             });
           });
           HapticFeedback.vibrate();
-          Navigator.of(context, rootNavigator: false).push(
-            CupertinoPageRoute<bool>(
-              fullscreenDialog: false,
-              builder: (BuildContext context) => MyHomePage(),
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, animation1, animation2) => MyHomePage(),
             ),
           );
           emailCtrl.clear();
@@ -425,7 +425,6 @@ class _MyLoginPageState extends State<MyStartUpPage>
                         curve: Curves.bounceOut,
                         parent: _findmeparkingcontroller)),
                   ),
-                  
                   Padding(
                       padding: EdgeInsets.only(
                     top: deviceSize.width * 0.125,
