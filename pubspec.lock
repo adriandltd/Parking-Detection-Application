@@ -109,6 +109,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0+1"
+  positioned_tap_detector:
+    dependency: "direct main"
+    description:
+      name: positioned_tap_detector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   pull_to_refresh:
     dependency: "direct main"
     description:
@@ -205,6 +212,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.8"
+  zoom_widget:
+    dependency: "direct main"
+    description:
+      name: zoom_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
 sdks:
-  dart: ">=2.2.2 <3.0.0"
+  dart: ">=2.3.0 <3.0.0"
   flutter: ">=1.9.1+hotfix.2 <2.0.0"

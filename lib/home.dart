@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:zoom_widget/zoom_widget.dart';
+import 'package:positioned_tap_detector/positioned_tap_detector.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage();
@@ -407,7 +409,7 @@ class FindMeParkingPage extends StatefulWidget {
   FindMeParkingPage();
   @override
   _FindMeParkingPage createState() {
-    return new _FindMeParkingPage();
+    return _FindMeParkingPage();
   }
 }
 
@@ -592,7 +594,7 @@ class ManualSelectionPage extends StatefulWidget {
   ManualSelectionPage();
   @override
   _ManualSelectionPage createState() {
-    return new _ManualSelectionPage();
+    return _ManualSelectionPage();
   }
 }
 
@@ -629,6 +631,25 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
             .animate(_audiencetargeting1controller);
   }
 
+  determineScaleFactor() {
+    var deviceSize = MediaQuery.of(context).size;
+    if (deviceSize.height > 900)
+      return 0.05;
+    else if (deviceSize.height > 800)
+      return 0.1;
+    else if (deviceSize.height > 700 && deviceSize.height < 800)
+      return 0.2;
+    else if (deviceSize.height > 600 && deviceSize.height < 700)
+      return 0.3;
+    else if (deviceSize.height > 500 && deviceSize.height < 600)
+      return 0.4;
+    else if (deviceSize.height > 400 && deviceSize.height < 500)
+      return 0.5;
+    else if (deviceSize.height > 300 && deviceSize.height < 400) return 4.5;
+  }
+
+  void _printTap(String gesture, TapPosition position) =>
+      print('$gesture: ${position.global}, ${position.relative}');
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
@@ -648,16 +669,38 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
       height: deviceSize.height,
       width: deviceSize.width,
       child: SlideTransition(
-        position: _audiencetargetingoffsetFloat,
-        child: Column(
-          children: <Widget>[
-            Text(
-              "Manual Selection",
-              style: TextStyle(color: Colors.white),
-            )
-          ],
-        ),
-      ),
+          position: _audiencetargetingoffsetFloat,
+          child: Zoom(
+            zoomSensibility: 1.5,
+            initZoom: 0,
+            canvasColor: Colors.transparent,
+            backgroundColor: Colors.transparent,
+            width: 811,
+            height: 655,
+            child: Stack(children: <Widget>[
+              Center(
+                child: Image.asset(
+                  'assets/UTRGVMap.png',
+                  scale: 1,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  print("E34 was tapped");
+                },
+                child: Align(
+                  alignment: Alignment(-0.95, -0.4),
+                  child: Container(
+                    height: 50.0,
+                    width: 125.0,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(color: Colors.white60),
+                    ),
+                  ),
+                ),
+              ),
+            ]),
+          )),
     );
   }
 }
@@ -666,7 +709,7 @@ class SupportPage extends StatefulWidget {
   SupportPage();
   @override
   _SupportPage createState() {
-    return new _SupportPage();
+    return _SupportPage();
   }
 }
 
@@ -746,7 +789,7 @@ class SettingsPage extends StatefulWidget {
   SettingsPage();
   @override
   _SettingsPage createState() {
-    return new _SettingsPage();
+    return _SettingsPage();
   }
 }
 
@@ -904,7 +947,7 @@ class _SettingsPage extends State<SettingsPage> with TickerProviderStateMixin {
                                 child: ListView(children: <Widget>[
                                   Padding(
                                       padding: EdgeInsets.only(
-                                    top: deviceSize.width * 0.1,
+                                    top: deviceSize.width * 0.025,
                                   )),
                                   Divider(
                                     color: Colors.grey[300],
@@ -996,7 +1039,7 @@ class AboutPage extends StatefulWidget {
   AboutPage();
   @override
   _AboutPage createState() {
-    return new _AboutPage();
+    return _AboutPage();
   }
 }
 

@@ -31,6 +31,8 @@ dependencies:
   shared_preferences: ^0.5.3+4
   rxdart: ^0.22.1
   pull_to_refresh: ^1.5.4
+  zoom_widget: ^0.1.3
+  positioned_tap_detector: ^1.0.3
   
 
 dev_dependencies:
@@ -58,6 +60,7 @@ flutter:
   - assets/findmeparkingicon.png
   - assets/utrgv-logo.png
   - assets/parkinglogo.png
+  - assets/UTRGVMap.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
