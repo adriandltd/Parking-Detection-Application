@@ -695,6 +695,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                       GestureDetector(
                         onTap: () {
                           print("E9 was tapped");
+                          HapticFeedback.vibrate();
                         },
                         child: Align(
                           alignment: Alignment(-0.38, -0.3),
@@ -702,7 +703,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 110.0,
                             width: 70.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
@@ -710,6 +711,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                       GestureDetector(
                         onTap: () {
                           print("E16 was tapped");
+                          HapticFeedback.vibrate();
                         },
                         child: Align(
                           alignment: Alignment(0.8, 0.1),
@@ -717,13 +719,14 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 190.0,
                             width: 60.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
+                          HapticFeedback.vibrate();
                           print("E28 was tapped");
                           Navigator.of(context, rootNavigator: true).push(
                           CupertinoPageRoute<bool>(
@@ -738,7 +741,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 33.0,
                             width: 33.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
@@ -746,6 +749,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                       GestureDetector(
                         onTap: () {
                           print("E34 was tapped");
+                          HapticFeedback.vibrate();
                         },
                         child: Align(
                           alignment: Alignment(-0.95, -0.4),
@@ -753,7 +757,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 50.0,
                             width: 125.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
