@@ -7,7 +7,8 @@ import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zoom_widget/zoom_widget.dart';
-import 'package:positioned_tap_detector/positioned_tap_detector.dart';
+
+import 'Parking Lots/E28.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage();
@@ -433,6 +434,7 @@ class _FindMeParkingPage extends State<FindMeParkingPage>
     _audiencetargeting2controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 650));
     _audiencetargeting2controller.forward();
+
     _audiencetargeting3controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 800));
     _audiencetargeting3controller.forward();
@@ -600,35 +602,35 @@ class ManualSelectionPage extends StatefulWidget {
 
 class _ManualSelectionPage extends State<ManualSelectionPage>
     with TickerProviderStateMixin {
-  AnimationController _audiencetargeting1controller;
-  AnimationController _audiencetargeting2controller;
-  AnimationController _audiencetargeting3controller;
-  AnimationController _audiencetargeting4controller;
+  AnimationController _manualselection1controller;
+  AnimationController _manualselection2controller;
+  AnimationController _manualselection3controller;
+  AnimationController _manualselection4controller;
 
-  Animation<Offset> _audiencetargetingoffsetFloat;
+  Animation<Offset> _manualselectionoffsetFloat;
 
   @override
   void initState() {
     super.initState();
 
-    _audiencetargeting1controller =
+    _manualselection1controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 385));
-    _audiencetargeting1controller.forward();
+    _manualselection1controller.forward();
 
-    _audiencetargeting2controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 650));
-    _audiencetargeting2controller.forward();
-    _audiencetargeting3controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 800));
-    _audiencetargeting3controller.forward();
+    _manualselection2controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
+    _manualselection2controller.forward();
+    _manualselection3controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 750));
+    _manualselection3controller.forward();
 
-    _audiencetargeting4controller = AnimationController(
+    _manualselection4controller = AnimationController(
         vsync: this, duration: Duration(milliseconds: 1000));
-    _audiencetargeting4controller.forward();
+    _manualselection4controller.forward();
 
-    _audiencetargetingoffsetFloat =
+    _manualselectionoffsetFloat =
         Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset.zero)
-            .animate(_audiencetargeting1controller);
+            .animate(_manualselection1controller);
   }
 
   determineScaleFactor() {
@@ -648,60 +650,117 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 4.5;
   }
 
-  void _printTap(String gesture, TapPosition position) =>
-      print('$gesture: ${position.global}, ${position.relative}');
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          stops: [.33, .66, 1],
-          colors: [
-            Color.fromRGBO(30, 30, 30, 1),
-            Color.fromRGBO(20, 20, 20, 1),
-            Color.fromRGBO(0, 0, 0, 1),
-          ],
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            stops: [.33, .66, 1],
+            colors: [
+              Color.fromRGBO(30, 30, 30, 1),
+              Color.fromRGBO(20, 20, 20, 1),
+              Color.fromRGBO(0, 0, 0, 1),
+            ],
+          ),
         ),
-      ),
-      height: deviceSize.height,
-      width: deviceSize.width,
-      child: SlideTransition(
-          position: _audiencetargetingoffsetFloat,
-          child: Zoom(
-            zoomSensibility: 1.5,
-            initZoom: 0,
-            canvasColor: Colors.transparent,
-            backgroundColor: Colors.transparent,
-            width: 811,
-            height: 655,
-            child: Stack(children: <Widget>[
-              Center(
-                child: Image.asset(
-                  'assets/UTRGVMap.png',
-                  scale: 1,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  print("E34 was tapped");
-                },
-                child: Align(
-                  alignment: Alignment(-0.95, -0.4),
-                  child: Container(
-                    height: 50.0,
-                    width: 125.0,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(color: Colors.white60),
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-          )),
-    );
+        height: deviceSize.height,
+        width: deviceSize.width,
+        child: SlideTransition(
+            position: _manualselectionoffsetFloat,
+            child: ScaleTransition(
+              scale: Tween(begin: .3, end: 1.0).animate(CurvedAnimation(
+                  curve: Curves.decelerate,
+                  parent: _manualselection2controller)),
+              child: ScaleTransition(
+                  scale: Tween(begin: .75, end: 1.0).animate(CurvedAnimation(
+                      curve: Curves.elasticIn,
+                      parent: _manualselection3controller)),
+                  child: Zoom(
+                    zoomSensibility: 1.5,
+                    initZoom: 0,
+                    canvasColor: Colors.transparent,
+                    backgroundColor: Colors.transparent,
+                    width: 811,
+                    height: 655,
+                    child: Stack(children: <Widget>[
+                      Center(
+                        child: Image.asset(
+                          'assets/UTRGVMap.png',
+                          scale: 1,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print("E9 was tapped");
+                        },
+                        child: Align(
+                          alignment: Alignment(-0.38, -0.3),
+                          child: Container(
+                            height: 110.0,
+                            width: 70.0,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(color: Colors.white60),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print("E16 was tapped");
+                        },
+                        child: Align(
+                          alignment: Alignment(0.8, 0.1),
+                          child: Container(
+                            height: 190.0,
+                            width: 60.0,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(color: Colors.white60),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print("E28 was tapped");
+                          Navigator.of(context, rootNavigator: true).push(
+                          CupertinoPageRoute<bool>(
+                            fullscreenDialog: true,
+                            builder: (BuildContext context) => E28(),
+                          ),
+                        );
+                        },
+                        child: Align(
+                          alignment: Alignment(-0.05, -0.15),
+                          child: Container(
+                            height: 33.0,
+                            width: 33.0,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(color: Colors.white60),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          print("E34 was tapped");
+                        },
+                        child: Align(
+                          alignment: Alignment(-0.95, -0.4),
+                          child: Container(
+                            height: 50.0,
+                            width: 125.0,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(color: Colors.white60),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]),
+                  )),
+            )));
   }
 }
 
