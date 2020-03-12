@@ -164,7 +164,7 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                                       Color color;
                                       if (snapshot.hasData &&
                                           !snapshot.hasError) {
-                                        if (snapshot.data['spot-1'])
+                                        if (snapshot.data['spot-1']['availability'])
                                           color = Colors.green;
                                         else
                                           color = Colors.red;
@@ -185,31 +185,97 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                             Align(
                               alignment: Alignment(-0.75, 0.425),
                               child: Container(
-                                  height: 25.0,
-                                  width: 70.0,
-                                  child: DecoratedBox(
-                                    decoration:
-                                        BoxDecoration(color: Colors.red),
-                                  )),
+                                height: 25.0,
+                                width: 70.0,
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-2']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
+                              ),
                             ),
                             Align(
                               alignment: Alignment(-0.75, 0.35),
                               child: Container(
-                                  height: 25.0,
-                                  width: 70.0,
-                                  child: DecoratedBox(
-                                    decoration:
-                                        BoxDecoration(color: Colors.red),
-                                  )),
+                                height: 25.0,
+                                width: 70.0,
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-3']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
+                              ),
                             ),
                             Align(
                               alignment: Alignment(-0.75, 0.275),
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-4']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -217,9 +283,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-5']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -227,10 +315,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-6']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -238,9 +347,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-7']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -248,9 +379,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-8']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -258,10 +411,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-9']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -269,10 +443,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-10']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -280,9 +475,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-11']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -290,10 +507,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-12']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -301,10 +539,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-13']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -312,9 +571,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-14']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -322,10 +603,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-15']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -333,9 +635,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-16']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -343,9 +667,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 25.0,
                                 width: 70.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-17']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
 //////////////////////////////////////////////////////////////////////////////
@@ -354,9 +700,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-18']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -364,20 +732,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(-0.475, -0.94),
-                              child: Container(
-                                height: 70.0,
-                                width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-19']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -385,9 +764,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-20']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -395,9 +796,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-21']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -405,9 +828,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-22']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -415,10 +860,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-23']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -426,9 +892,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-24']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -436,9 +924,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-25']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -446,9 +956,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-26']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -456,9 +988,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-27']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -466,10 +1020,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-28']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -477,9 +1052,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-29']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -487,10 +1084,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-30']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -498,13 +1116,35 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  child: Image.asset('assets/handicap-icon.png',
-                                      scale: determineScaleFactor(),
-                                      alignment: Alignment.center),
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-31']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          child: Image.asset(
+                                              'assets/handicap-icon.png',
+                                              scale: determineScaleFactor(),
+                                              alignment: Alignment.center),
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -512,13 +1152,35 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  child: Image.asset('assets/handicap-icon.png',
-                                      scale: determineScaleFactor(),
-                                      alignment: Alignment.center),
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-32']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          child: Image.asset(
+                                              'assets/handicap-icon.png',
+                                              scale: determineScaleFactor(),
+                                              alignment: Alignment.center),
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -526,12 +1188,35 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  child: Image.asset('assets/handicap-icon.png',
-                                      scale: determineScaleFactor(),
-                                      alignment: Alignment.center),
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-33']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          child: Image.asset(
+                                              'assets/handicap-icon.png',
+                                              scale: determineScaleFactor(),
+                                              alignment: Alignment.center),
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
 ////////////////////////////////////////////////////////////////////////////
@@ -540,9 +1225,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-34']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -550,10 +1257,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-35']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -561,9 +1289,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-36']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -571,9 +1321,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-37']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -581,9 +1353,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-38']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -591,10 +1385,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-39']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -602,9 +1417,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-40']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -612,9 +1449,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-41']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -622,9 +1481,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-42']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -632,9 +1513,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-43']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -642,10 +1545,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-44']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -653,9 +1577,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-45']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -663,10 +1609,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-46']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -674,10 +1641,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-47']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -685,20 +1673,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(0.665, -0.62),
-                              child: Container(
-                                height: 70.0,
-                                width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-48']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
 ////////////////////////////////////////////////////////////////////////
@@ -707,9 +1706,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-49']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -717,10 +1738,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-50']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -728,9 +1770,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-51']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -738,9 +1802,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-52']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -748,9 +1834,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-53']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -758,10 +1866,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-54']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -769,9 +1898,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-55']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -779,9 +1930,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-56']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -789,9 +1962,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-57']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -799,9 +1994,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-58']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -809,10 +2026,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-59']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -820,9 +2058,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-60']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -830,10 +2090,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-61']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -841,21 +2122,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(0.59, -0.4),
-                              child: Container(
-                                height: 70.0,
-                                width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-62']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
 ////////////////////////////////////////////////////////////////
@@ -864,9 +2155,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-63']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -874,10 +2187,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-64']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -885,9 +2219,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-65']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -895,9 +2251,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-66']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -905,9 +2283,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-67']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -915,10 +2315,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-68']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -926,9 +2347,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-69']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -936,9 +2379,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-70']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -946,9 +2411,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-71']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -956,9 +2443,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-72']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -966,10 +2475,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-73']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -977,9 +2507,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-74']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -987,10 +2539,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-75']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -998,21 +2571,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(0.59, -0.05),
-                              child: Container(
-                                height: 70.0,
-                                width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-76']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
 ////////////////////////////////////////////////////////////////
@@ -1021,9 +2604,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-77']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1031,10 +2636,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-78']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1042,9 +2668,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-79']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1052,9 +2700,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-80']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1062,9 +2732,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-81']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1072,10 +2764,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-82']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1083,9 +2796,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-83']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1093,9 +2828,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-84']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1103,9 +2860,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-85']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1113,9 +2892,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-86']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1123,10 +2924,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-87']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1134,9 +2956,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-88']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1144,21 +2988,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(0.515, 0.17),
-                              child: Container(
-                                height: 70.0,
-                                width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-89']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
 ////////////////////////////////////////////////////////////////
@@ -1167,9 +3021,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-90']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1177,10 +3053,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-91']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1188,9 +3085,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-92']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1198,9 +3117,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-93']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1208,9 +3149,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-94']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1218,10 +3181,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-95']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1229,9 +3213,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-96']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1239,9 +3245,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-97']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1249,9 +3277,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-98']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1259,9 +3309,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-99']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1269,10 +3341,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-100']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1280,9 +3373,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(color: Colors.red),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-101']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                             Align(
@@ -1290,21 +3405,31 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                               child: Container(
                                 height: 70.0,
                                 width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(0.515, 0.5),
-                              child: Container(
-                                height: 70.0,
-                                width: 25.0,
-                                child: DecoratedBox(
-                                  decoration:
-                                      BoxDecoration(color: Colors.green),
-                                ),
+                                child: StreamBuilder(
+                                    stream: Firestore.instance
+                                        .collection('Parking Lots')
+                                        .document('E28')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      Color color;
+                                      if (snapshot.hasData &&
+                                          !snapshot.hasError) {
+                                        if (snapshot.data['spot-102']['availability'])
+                                          color = Colors.green;
+                                        else
+                                          color = Colors.red;
+                                        return DecoratedBox(
+                                          decoration:
+                                              BoxDecoration(color: color),
+                                        );
+                                      } else {
+                                        return SizedBox(
+                                          child: CircularProgressIndicator(),
+                                          width: 25,
+                                          height: 25,
+                                        );
+                                      }
+                                    }),
                               ),
                             ),
                           ]));

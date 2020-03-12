@@ -703,7 +703,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 110.0,
                             width: 70.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.transparent),
+                              decoration: BoxDecoration(color: Colors.white60),
                             ),
                           ),
                         ),
@@ -719,7 +719,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 190.0,
                             width: 60.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.transparent),
+                              decoration: BoxDecoration(color: Colors.white60),
                             ),
                           ),
                         ),
@@ -741,7 +741,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 33.0,
                             width: 33.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.transparent),
+                              decoration: BoxDecoration(color: Colors.white60),
                             ),
                           ),
                         ),
@@ -757,7 +757,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 50.0,
                             width: 125.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.transparent),
+                              decoration: BoxDecoration(color: Colors.white60),
                             ),
                           ),
                         ),
