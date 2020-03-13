@@ -146,7 +146,7 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
                           height: 811,
                           child: Stack(children: <Widget>[
                             Center(
-                              child: Image.asset('assets/E28.png',
+                              child: Image.asset('assets/parkinglots/E28.png',
                                   scale: determineScaleFactor(),
                                   alignment: Alignment.topCenter),
                             ),

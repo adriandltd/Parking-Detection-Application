@@ -867,14 +867,6 @@ class _SettingsPage extends State<SettingsPage> with TickerProviderStateMixin {
   String userEmail;
 
   void _changeAccountPassword() async {
-    FirebaseAuth.instance.currentUser().then((user) async {
-      DocumentReference userReference =
-          Firestore.instance.collection('cards').document(user.uid);
-      DocumentSnapshot userRef = await userReference.get();
-      setState(() {
-        userEmail = userRef['Email'];
-      });
-    });
     FirebaseAuth.instance.sendPasswordResetEmail(email: userEmail);
     showDialog<void>(
         context: context,

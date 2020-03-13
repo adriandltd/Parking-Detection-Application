@@ -260,20 +260,6 @@ class _MyLoginPageState extends State<MyStartUpPage>
                 );
               });
         } else if (user != null && user.isEmailVerified) {
-          //isUserSignedIn = true;
-          Timestamp lastloggedin = Timestamp.now();
-
-          FirebaseAuth.instance.currentUser().then((user) async {
-            String token = user.getIdToken().toString();
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            prefs.setString('IdToken', token);
-            print('token: ' + token.toString());
-            Firestore.instance.collection('cards').document(user.uid).setData({
-              'Last Logged In': lastloggedin,
-            }, merge: true).then((val) {
-              print('Instagram Info saved');
-            });
-          });
           HapticFeedback.vibrate();
           Navigator.pushReplacement(
             context,

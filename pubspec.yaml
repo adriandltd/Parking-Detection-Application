@@ -54,16 +54,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/komi social white.png
-  - assets/komi logo april 2019.png
-  - assets/arrow_right.png
   - assets/findmeparkinglogo.png
   - assets/findmeparkingicon.png
+  - assets/findmeparkingiconblack.png
   - assets/utrgv-logo.png
-  - assets/parkinglogo.png
   - assets/UTRGVMap.png
   - assets/handicap-icon.png
-  - assets/E28.png
+  - assets/parkinglots/E28.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
