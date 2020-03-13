@@ -23,6 +23,9 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
   int page;
   Widget body;
   AnimationController _sidebarcontroller;
+  AnimationController _animationController;
+  Animation _animation;
+  bool splash = true;
 
   determineScaleFactor() {
     var deviceSize = MediaQuery.of(context).size;
@@ -77,20 +80,70 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 750));
+    _animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+        parent: _animationController, curve: Curves.easeInCirc));
+    _animationController.forward();
+    Future.delayed(Duration(milliseconds: 6250)).then((value) {
+      setState(() {
+        _animationController.reverse();
+      });
+    });
     Future.delayed(const Duration(milliseconds: 1000), () async {
       setState(() async {});
     });
-    super.initState();
     _sidebarcontroller = AnimationController(
         vsync: this, duration: Duration(milliseconds: 3250));
     _sidebarcontroller.forward();
+  }
+
+  disclaimerwidget() {
+    var deviceSize = MediaQuery.of(context).size;
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: FadeTransition(
+            opacity: _animation,
+            child: Container(
+                decoration: BoxDecoration(
+                  gradient: RadialGradient(
+                    radius: 1.5,
+                    center: Alignment.center,
+                    stops: [.15, .4, 1],
+                    colors: [
+                      Color.fromRGBO(30, 30, 30, 1),
+                      Color.fromRGBO(20, 20, 20, 1),
+                      Color.fromRGBO(0, 0, 0, 1),
+                    ],
+                  ),
+                ),
+                child: Center(
+                    child: SizedBox(
+                        height: deviceSize.height * 0.9,
+                        width: deviceSize.width * 0.9,
+                        child: Image.asset('assets/disclaimer.png'))))));
   }
 
   @override
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     determinePage(deviceSize);
-    return WillPopScope(onWillPop: () async => false, child: body);
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: FutureBuilder(builder: (context, snapshot) {
+        if (!splash) {
+          return body;
+        } else {
+          Future.delayed(Duration(milliseconds: 7500)).then((value) {
+            setState(() {
+              splash = false;
+            });
+          });
+          return disclaimerwidget();
+        }
+      }),
+    );
   }
 
   determinePage(deviceSize) {
@@ -729,11 +782,11 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                           HapticFeedback.vibrate();
                           print("E28 was tapped");
                           Navigator.of(context, rootNavigator: true).push(
-                          CupertinoPageRoute<bool>(
-                            fullscreenDialog: true,
-                            builder: (BuildContext context) => E28(),
-                          ),
-                        );
+                            CupertinoPageRoute<bool>(
+                              fullscreenDialog: true,
+                              builder: (BuildContext context) => E28(),
+                            ),
+                          );
                         },
                         child: Align(
                           alignment: Alignment(-0.05, -0.15),

@@ -6,7 +6,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'forgotpasswordpage.dart';
@@ -22,11 +21,11 @@ Future<void> main() async {
   print(idToken);
   checkifLoggedIn() {
     if (idToken == null)
-      return MyStartUpApp();
+      return MyStartUpApp(false);
     else if (idToken == 'none')
-      return MyStartUpApp();
+      return MyStartUpApp(false);
     else
-      return MyStartUpApp2();
+      return MyStartUpApp(true);
   }
 
   runApp(checkifLoggedIn());
@@ -47,6 +46,8 @@ class MyStartUpApp extends StatelessWidget {
   };
 
   final MaterialColor colorCustom = MaterialColor(0xFF4286f4, color);
+  final checkloginstatus;
+  MyStartUpApp(this.checkloginstatus);
   setPortraitOrientation() async {
     await SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -61,53 +62,16 @@ class MyStartUpApp extends StatelessWidget {
         cursorColor: Colors.white54,
         primarySwatch: colorCustom,
       ),
-      home: MyStartUpPage(),
+      home: checkloginstatus ? MyHomePage() : MyLoginPage(),
       routes: <String, WidgetBuilder>{
-        '/start': (BuildContext context) => MyStartUpPage(),
+        '/start': (BuildContext context) => MyLoginPage(),
       },
     );
   }
 }
 
-class MyStartUpApp2 extends StatelessWidget {
-  static Map<int, Color> color = {
-    50: Color.fromRGBO(255, 112, 0, .1),
-    100: Color.fromRGBO(255, 112, 0, .2),
-    200: Color.fromRGBO(255, 112, 0, .3),
-    300: Color.fromRGBO(255, 112, 0, .4),
-    400: Color.fromRGBO(255, 112, 0, .5),
-    500: Color.fromRGBO(255, 112, 0, .6),
-    600: Color.fromRGBO(255, 112, 0, .7),
-    700: Color.fromRGBO(255, 112, 0, .8),
-    800: Color.fromRGBO(255, 112, 0, .9),
-    900: Color.fromRGBO(255, 112, 0, 1),
-  };
-
-  final MaterialColor colorCustom = MaterialColor(0xFF4286f4, color);
-  setPortraitOrientation() async {
-    await SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  }
-
-  Widget build(BuildContext context) {
-    setPortraitOrientation();
-    return MaterialApp(
-      title: 'Find Me Parking',
-      theme: ThemeData(
-        textSelectionHandleColor: Colors.grey[400],
-        cursorColor: Colors.white54,
-        primarySwatch: colorCustom,
-      ),
-      home: MyHomePage(),
-      routes: <String, WidgetBuilder>{
-        '/start': (BuildContext context) => MyStartUpPage(),
-      },
-    );
-  }
-}
-
-class MyStartUpPage extends StatefulWidget {
-  MyStartUpPage({Key key, this.title}) : super(key: key);
+class MyLoginPage extends StatefulWidget {
+  MyLoginPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -115,7 +79,7 @@ class MyStartUpPage extends StatefulWidget {
   _MyLoginPageState createState() => _MyLoginPageState();
 }
 
-class _MyLoginPageState extends State<MyStartUpPage>
+class _MyLoginPageState extends State<MyLoginPage>
     with TickerProviderStateMixin {
   determineScaleFactorFindMeParking() {
     var deviceSize = MediaQuery.of(context).size;
@@ -172,7 +136,6 @@ class _MyLoginPageState extends State<MyStartUpPage>
   }
 
   AnimationController _listscalecontroller;
-  AnimationController _utrgvlogocontroller;
   AnimationController _findmeparkingcontroller;
   AnimationController _loginscalecontroller;
   AnimationController _emailcontroller;
@@ -191,7 +154,6 @@ class _MyLoginPageState extends State<MyStartUpPage>
 
   //Email Sign In and FireBase Authentication
   signInWithEmail(context) async {
-    // marked async
     FirebaseUser user;
     try {
       setState(() {
@@ -260,8 +222,14 @@ class _MyLoginPageState extends State<MyStartUpPage>
                 );
               });
         } else if (user != null && user.isEmailVerified) {
+          FirebaseAuth.instance.currentUser().then((user) async {
+            String token = user.getIdToken().toString();
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            prefs.setString('IdToken', token);
+            print('token: ' + token.toString());
+          });
           HapticFeedback.vibrate();
-          Navigator.pushReplacement(
+          Navigator.push(
             context,
             PageRouteBuilder(
               pageBuilder: (context, animation1, animation2) => MyHomePage(),
@@ -689,9 +657,6 @@ class _MyLoginPageState extends State<MyStartUpPage>
     _findmeparkingcontroller = AnimationController(
         vsync: this, duration: Duration(milliseconds: 1300));
     _findmeparkingcontroller.forward();
-    _utrgvlogocontroller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1300));
-    _utrgvlogocontroller.forward();
     _emailcontroller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 350));
     _emailcontroller.forward();

@@ -1,13 +1,8 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:komi_social/Tools/connection.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:zoom_widget/zoom_widget.dart';
 
 class E28 extends StatefulWidget {

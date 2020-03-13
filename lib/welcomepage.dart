@@ -15,20 +15,20 @@ class MyWelcomePage extends StatefulWidget {
 class _MyWelcomePage extends State<MyWelcomePage>
     with TickerProviderStateMixin {
 
-  determineScaleFactor() {
+  determineScaleFactorFindMeParking() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
-      return 11.5;
+      return 11.0;
     else if (deviceSize.height > 800)
-      return 12.5;
+      return 12.0;
     else if (deviceSize.height > 700 && deviceSize.height < 800)
-      return 13.0;
+      return 12.5;
     else if (deviceSize.height > 600 && deviceSize.height < 700)
-      return 14.0;
+      return 13.0;
     else if (deviceSize.height > 500 && deviceSize.height < 600)
-      return 14.5;
+      return 13.5;
     else if (deviceSize.height > 400 && deviceSize.height < 500)
-      return 15.0;
+      return 14.0;
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
@@ -156,7 +156,7 @@ class _MyWelcomePage extends State<MyWelcomePage>
                               curve: Curves.decelerate,
                               parent: _logoscalecontroller)),
                       child: Image.asset('assets/findmeparkingiconblack.png',
-                          scale: determineScaleFactor(),
+                          scale: determineScaleFactorFindMeParking(),
                           alignment: Alignment.center),
                     ),
                     Padding(
