@@ -7,7 +7,6 @@ import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zoom_widget/zoom_widget.dart';
-
 import 'Parking Lots/E28.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -756,7 +755,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 110.0,
                             width: 70.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
@@ -772,7 +771,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 190.0,
                             width: 60.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
@@ -794,7 +793,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 33.0,
                             width: 33.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
@@ -810,7 +809,7 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
                             height: 50.0,
                             width: 125.0,
                             child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white60),
+                              decoration: BoxDecoration(color: Colors.transparent),
                             ),
                           ),
                         ),
