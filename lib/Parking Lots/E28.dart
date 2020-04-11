@@ -87,7 +87,7 @@ class _E28 extends State<E28> with TickerProviderStateMixin {
         primary: true,
         elevation: 0,
         title: Text(
-          "Parking Lot E28",
+          "Parking Lot: E28",
           style: TextStyle(
               letterSpacing: 1,
               color: Colors.white,

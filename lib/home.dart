@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:komi_social/Parking%20Lots/Demo.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zoom_widget/zoom_widget.dart';
@@ -159,7 +160,7 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
         break;
       case 2:
         setState(() {
-          body = _support(deviceSize);
+          body = _demo(deviceSize);
         });
         break;
       case 3:
@@ -228,7 +229,7 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
     );
   }
 
-  Widget _support(deviceSize) {
+  Widget _demo(deviceSize) {
     return Scaffold(
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
@@ -237,7 +238,7 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
           primary: true,
           elevation: 0,
           title: Text(
-            "Support",
+            "Parking Lot: Demo",
             style: TextStyle(
                 letterSpacing: 1,
                 color: Colors.white,
@@ -247,7 +248,7 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ),
         drawer: _drawer(deviceSize),
-        body: SupportPage());
+        body: DemoPage());
   }
 
   Widget _settings(deviceSize) {
@@ -384,11 +385,11 @@ class _MyHomePage extends State<MyHomePage> with TickerProviderStateMixin {
             ),
             ListTile(
               leading: Icon(
-                Icons.security,
+                Icons.developer_mode,
                 color: Colors.grey[200],
               ),
               title: Text(
-                'Support',
+                'Demo',
                 style: TextStyle(
                     height: 1,
                     color: Colors.grey[100],
@@ -820,15 +821,15 @@ class _ManualSelectionPage extends State<ManualSelectionPage>
   }
 }
 
-class SupportPage extends StatefulWidget {
-  SupportPage();
+class DemoPage extends StatefulWidget {
+  DemoPage();
   @override
-  _SupportPage createState() {
-    return _SupportPage();
+  _DemoPage createState() {
+    return _DemoPage();
   }
 }
 
-class _SupportPage extends State<SupportPage> with TickerProviderStateMixin {
+class _DemoPage extends State<DemoPage> with TickerProviderStateMixin {
   determineScaleFactor() {
     var deviceSize = MediaQuery.of(context).size;
     if (deviceSize.height > 900)
@@ -846,20 +847,20 @@ class _SupportPage extends State<SupportPage> with TickerProviderStateMixin {
     else if (deviceSize.height > 300 && deviceSize.height < 400) return 10.0;
   }
 
-  AnimationController _managerpage1controller;
-  Animation<Offset> _managerpageoffsetFloat;
+  AnimationController _demopage1controller;
+  Animation<Offset> _demopageoffsetFloat;
 
   @override
   void initState() {
     setState(() {});
     super.initState();
-    _managerpage1controller =
+    _demopage1controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 385));
-    _managerpage1controller.forward();
+    _demopage1controller.forward();
 
-    _managerpageoffsetFloat =
+    _demopageoffsetFloat =
         Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset.zero)
-            .animate(_managerpage1controller);
+            .animate(_demopage1controller);
   }
 
   @override
@@ -879,24 +880,12 @@ class _SupportPage extends State<SupportPage> with TickerProviderStateMixin {
           ),
         ),
         child: SlideTransition(
-            position: _managerpageoffsetFloat,
+            position: _demopageoffsetFloat,
             child: Container(
                 width: deviceSize.width,
-                child: Align(
-                    alignment: Alignment.topLeft,
-                    child: SizedBox(
-                      width: deviceSize.width * 0.88,
-                      child: Container(
-                          child: Text(
-                        "Support Page",
-                        style: TextStyle(
-                            letterSpacing: 1,
-                            color: Colors.white,
-                            fontSize: deviceSize.height * 0.025,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'AvenirNext'),
-                      )),
-                    )))));
+                child:  Container(
+                          child: Demo()),
+                    )));
   }
 }
 
